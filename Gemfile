@@ -11,7 +11,9 @@ gem 'sinatra-activerecord', require: 'sinatra/activerecord'
 gem 'rake'
 gem 'sqlite3'
 gem 'thin'
+gem 'require_all'
 gem 'bcrypt'
+
 
 gem 'shotgun'
 gem 'pry'
