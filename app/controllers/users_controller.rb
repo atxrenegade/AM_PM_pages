@@ -21,5 +21,4 @@ class UsersController < Sinatra::Base
 		#validate and store params
 		erb :'./index'
 	end
-
 end
