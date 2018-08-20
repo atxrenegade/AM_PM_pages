@@ -10,7 +10,7 @@ class UsersController < ActiveRecord::Base
 
 	post 'users/sign_up' do
 		#validate and store params
-		erb index
+		erb :index
 	end
 
 	get '/users/error' do
