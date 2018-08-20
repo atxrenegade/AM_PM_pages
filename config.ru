@@ -6,7 +6,6 @@ end
 
 #NOTE: this test may not run correctly with older versions of ruby, if an issue arises change line 3 to "if ActiveRecord::Migrator.needs_migration?"
 
-
 require_relative 'app/controllers/application_controller'
 require_relative 'app/controllers/users_controller'
 require_relative 'app/controllers/am_entries_controller'
