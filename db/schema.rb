@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_18_055603) do
+ActiveRecord::Schema.define(version: 2018_08_20_171639) do
 
-  create_table "am_entrys", force: :cascade do |t|
+  create_table "am_entries", force: :cascade do |t|
     t.datetime "time_date"
     t.string "goals"
     t.string "awesome"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2018_08_18_055603) do
     t.string "words"
   end
 
-  create_table "pm_entrys", force: :cascade do |t|
+  create_table "pm_entries", force: :cascade do |t|
     t.datetime "time_date"
     t.string "excellent"
     t.string "lessons"
