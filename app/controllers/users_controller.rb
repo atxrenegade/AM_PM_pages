@@ -1,4 +1,4 @@
-class UsersController < Sinatra::Base
+class UsersController < ApplicationController
 
 	get 'users/sign_up' do
 		erb :'users/view'

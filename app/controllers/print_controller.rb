@@ -1,3 +1,3 @@
-class PrintController < Sinatra::Base
+class PrintController < ApplicationController
 
 end

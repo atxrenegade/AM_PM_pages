@@ -1,3 +1,3 @@
-class PMEntriesController < Sinatra::Base
-
-end	
+class PMEntriesController < ApplicationController
+	belongs_to :user
+end

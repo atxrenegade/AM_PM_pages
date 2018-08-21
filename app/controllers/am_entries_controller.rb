@@ -1,3 +1,3 @@
-class AMEntriesController < Sinatra::Base
-
+class AMEntriesController < ApplicationController
+	belongs_to :user
 end
