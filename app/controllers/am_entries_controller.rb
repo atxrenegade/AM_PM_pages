@@ -1,3 +1,4 @@
+require_relative 'application_controller.rb'
 class AMEntriesController < ApplicationController
-	belongs_to :user
+	
 end
