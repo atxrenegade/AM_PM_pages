@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-<html>
-  	<head>
-    	<meta charset="UTF-8">
-    	<title>AM/PM Pages - NEW ENTRY</title>
-  	</head>
-  	<body>
-	  	<h1> EVENING PAGES </h1>
-	  	<!--display current date and time here-->
-	  	<!-- format: Month, Day Year 00:00am -->
-	  	<form action='/pm_entries/new' method="POST">
-			<h4>Two things today that went really well or exceeded my expectations were:
-		  	<h4><input type="text" name="excellent_1" placeholder="1: " </h4><br>
-			<h4><input type="text" name="excellent_2" placeholder="2: " </h4><br>
-			<h4>Three lessons I learned today, or ways I could have made the day better:</h4><br>
-			<h4><input type="text" name="lessons_1" placeholder="1: " </h4><br>
-			<h4><input type="text" name="lessons_2" placeholder="2: " </h4><br>
-			<h4><input type="text" name="lessons_3" placeholder="3: " </h4><br>
-			<h4>Five things I am grateful for right now are:</h4><br>
-			<h4><input type="text" name="gratitude_1" placeholder="1: " </h4><br>
-			<h4><input type="text" name="gratitude_2" placeholder="2: " </h4><br>
-			<h4><input type="text" name="gratitude_3" placeholder="3: " </h4><br>
-			<h4><input type="text" name="gratitude_4" placeholder="4: " </h4><br>
-			<h4><input type="text" name="gratitude_1" placeholder="5: " </h4><br>
-			<h4>Additional thoughts/words:</h4><br>
-			<h4><input type="text" name="words" </h4><br>
-		</form>
-  	</body>
-</html>
+
+	<h1> EVENING PAGES </h1>
+	<!--display current date and time here-->
+	<!-- format: Month, Day Year 00:00am -->
+	<form action='/pm_entries/new' method="POST">
+	<h4>Two things today that went really well or exceeded my expectations were:
+  	<h4>1. <input type="text" name="excellent_1" style="width: 600px;" </h4><br>
+	<h4>2. <input type="text" name="excellent_2" style="width: 600px;" </h4><br>
+	<h4>Three lessons I learned today, or ways I could have made the day better:</h4>
+	<h4>1. <input type="text" name="lessons_1" style="width: 600px;" </h4><br>
+	<h4>2. <input type="text" name="lessons_2" style="width: 600px;" </h4><br>
+	<h4>3. <input type="text" name="lessons_3" style="width: 600px;" </h4><br>
+	<h4>Five things I am grateful for right now are:</h4>
+	<h4>1. <input type="text" name="gratitude_1" style="width: 600px;" </h4><br>
+	<h4>2. <input type="text" name="gratitude_2" style="width: 600px;" </h4><br>
+	<h4>3. <input type="text" name="gratitude_3" style="width: 600px;" </h4><br>
+	<h4>4. <input type="text" name="gratitude_4" style="width: 600px;" </h4><br>
+	<h4>5. <input type="text" name="gratitude_5" style="width: 600px;"</h4><br>
+	<h4>Additional thoughts/words:</h4><br>
+	<h4><textarea name="words" cols="85" rows="5"> </textarea></h4>
+	<input type="submit" value="Save Entry">
+</form>
