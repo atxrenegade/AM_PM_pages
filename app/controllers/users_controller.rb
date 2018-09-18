@@ -2,19 +2,19 @@ require 'rack-flash'
 
 class UsersController < ApplicationController
 	use Rack::Flash
-	
+
 	get '/sign_up' do
 		erb :'/users/sign_up'
 	end
 
 	post '/sign_up' do
-		if !params[:username].empty? || !params[:email].empty? || !params[:password].empty?
+		if params[:username].empty? || params[:email].empty? || params[:password].empty?
+			flash[:message] = "Sign up error. Please complete all the fields below."
+			redirect '/sign_up'
+		else
 			@user = User.new(username: params["username"], email: params["email"], password: params["password"])
 			@user.save
-			erb :'./index'
-		else
-			flash[:message] = "Sign up error. Please complete all the fields below."
-			redirect '/signup'
+			erb :'/main_menu'
 		end
 	end
 
