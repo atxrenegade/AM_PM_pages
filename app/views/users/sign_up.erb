@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>AM/PM Pages - SIGN UP</title>
-  </head>
-  <body>
-	  <h4> New Users Please Sign Up Below: </h4>
-	  <form action="/sign_up" method="POST">
-	  <h4><input type="text" name="username" placeholder="Username:" </h4><br>
-	  <h4><input type="text" name="email" placeholder="Email:"</h4><br>
-	  <h4><input type="text" name="password" placeholder="Password:"</h4><br>
+<%if flash.has?(:message)%>
+	<%= flash[:message]%>
+<%end%>
 
-	  <h4><input type="submit" value="SIGN UP"</h4><br><br>
-  </body>
-</html>
+<h4> New Users Please Sign Up Below: </h4>
+<form action="/sign_up" method="POST">
+<h4><input type="text" name="username" placeholder="Username:" </h4><br>
+<h4><input type="text" name="email" placeholder="Email:"</h4><br>
+<h4><input type="text" name="password" placeholder="Password:"</h4><br>
+
+<h4><input type="submit" value="SIGN UP"</h4><br><br>

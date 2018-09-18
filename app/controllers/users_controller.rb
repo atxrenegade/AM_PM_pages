@@ -1,5 +1,8 @@
-class UsersController < ApplicationController
+require 'rack-flash'
 
+class UsersController < ApplicationController
+	use Rack::Flash
+	
 	get '/sign_up' do
 		erb :'/users/sign_up'
 	end
@@ -10,8 +13,8 @@ class UsersController < ApplicationController
 			@user.save
 			erb :'./index'
 		else
+			flash[:message] = "Sign up error. Please complete all the fields below."
 			redirect '/signup'
-			#add flash message - Sign up error. Please complete all the fields below
 		end
 	end
 
@@ -26,8 +29,8 @@ class UsersController < ApplicationController
 			session[:id] = user[:id]
 			erb :'/main_menu'
 		else
+			flash[:message] = "Login Error. Please input a valid username and password."
 			redirect '/login'
-			#flash message - Login Error. Please input a valid username and password
 		end
 	end
 
