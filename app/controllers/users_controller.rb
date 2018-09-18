@@ -4,21 +4,22 @@ class UsersController < ApplicationController
 		erb :'/users/sign_up'
 	end
 
+	post '/sign_up' do
+		if !params[:username].empty? || !params[:email].empty? || !params[:password].empty?
+			@user = User.new(username: params[:username], email: params[:email], password: params[:password])
+			@user.save
+			erb :'./index'
+		else
+			redirect '/signup'
+			#add flash message - Sign up error. Please complete all the fields below
+		end
+	end
+
 	get '/login_in' do
 		erb :'users/login_in'
 	end
 
-	post '/sign_up' do
-		#validate and store params
-		erb :'./index'
-	end
-
 	get '/error' do
 		erb :'/users/error'
-	end
-
-	post '/users/sign_up' do
-		#validate and store params
-		erb :'./index'
 	end
 end
