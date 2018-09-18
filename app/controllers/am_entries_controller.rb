@@ -6,6 +6,5 @@ class AMEntriesController < ApplicationController
 
 	post '/am_entries/new' do
 		binding.pry
-
 	end
 end
