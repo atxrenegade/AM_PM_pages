@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
 	post '/sign_up' do
 		if !params[:username].empty? || !params[:email].empty? || !params[:password].empty?
-			@user = User.new(username: params[:username], email: params[:email], password: params[:password])
+			@user = User.new(username: params["username"], email: params["email"], password: params["password"])
 			@user.save
 			erb :'./index'
 		else
@@ -20,12 +20,13 @@ class UsersController < ApplicationController
 	end
 
 	post '/login' do
-		@user = User.find_by(username: params[:username], password: params[:password])
-		if user && user.authenticate(params[:password])
-			session[:id] == user_id
-			erb :'./main_menu'
+		#binding.pry
+		user = User.find_by(username: params["username"])
+		if user && user.authenticate(params["password"])
+			session[:id] = user[:id]
+			erb :'/main_menu'
 		else
-			reroute '/login'
+			redirect '/login'
 			#flash message - Login Error. Please input a valid username and password
 		end
 	end
