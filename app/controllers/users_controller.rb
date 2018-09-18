@@ -15,8 +15,16 @@ class UsersController < ApplicationController
 		end
 	end
 
-	get '/login_in' do
-		erb :'users/login_in'
+	get '/login' do
+		erb :'users/login'
+	end
+
+	post '/login' do
+		@user = User.find_by(username: params[:username], password: params[:password])
+		if user && user.authenticate(params[:password])
+			session[:id] == user_id
+			erb :'./main_menu'
+		end
 	end
 
 	get '/error' do
