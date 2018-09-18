@@ -24,6 +24,9 @@ class UsersController < ApplicationController
 		if user && user.authenticate(params[:password])
 			session[:id] == user_id
 			erb :'./main_menu'
+		else
+			reroute '/login'
+			#flash message - Login Error. Please input a valid username and password
 		end
 	end
 
