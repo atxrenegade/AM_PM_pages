@@ -1,3 +1,5 @@
+require 'rack-flash'
+
 class ApplicationController < Sinatra::Base
 	configure do
 		enable :sessions

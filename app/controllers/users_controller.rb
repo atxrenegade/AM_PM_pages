@@ -1,5 +1,3 @@
-require 'rack-flash'
-
 class UsersController < ApplicationController
 	use Rack::Flash
 
@@ -32,9 +30,5 @@ class UsersController < ApplicationController
 			flash[:message] = "Login Error. Please input a valid username and password."
 			redirect '/login'
 		end
-	end
-
-	get '/error' do
-		erb :'/users/error'
 	end
 end
