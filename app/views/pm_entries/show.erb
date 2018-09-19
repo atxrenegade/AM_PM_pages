@@ -1,1 +1,20 @@
 <h1>  PM Show Page </h1>
+
+
+
+
+
+
+
+
+
+
+<form action="/pm_entries/<%=@pm_entry.id%>/edit" method="GET">
+	<input id="hidden" type="hidden" name="_method" value="edit">
+	<input type="submit" name="edit" value="Edit Entry">
+</form>
+
+<form action="/pm_entries/<%=@pm_entry.id%>/delete" method="GET">
+	<input id="hidden" type="hidden" name="_method" value="delete">
+	<input type="submit" name="delete" value="Delete Entry">
+</form>
