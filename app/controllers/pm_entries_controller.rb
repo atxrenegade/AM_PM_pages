@@ -14,4 +14,27 @@ class PMEntriesController < ApplicationController
 
 		redirect '/pm_entries/#{@pm_entry.id}/show'
 	end
+
+	get '/pm_entries/:id/edit' do
+		@pm_entry = PM_Entry.find_by_id(params[:id])
+		erb :'/pm_entries/edit'
+	end
+
+	patch '/pm_entries/:id/edit' do
+		@pm_entry = PM_Entry.find_by_id(params[:id])
+		#update attributes here
+		#
+		#
+		#
+		#
+		#
+		@am_entry.save
+		redirect '/pm_entries/show/#{id}'
+	end
+
+	get '/pm_entries/:id/delete' do
+		@pm_entry = AM_Entry.find_by_id(params[:id])
+		@pm_entry.destroy
+		redirect '/index'
+	end
 end
