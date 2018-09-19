@@ -21,6 +21,24 @@ class AMEntriesController < ApplicationController
 		@am_entry = AM_Entry.new(time_date: @time_date, goals: goals_array, awesome: params["awesome"], affirmation: params["affirmation"], gratitude: gratitude_array, words: params["words"])
 		@am_entry.save
 
-		erb :'/am_entries/show'
+		redirect "/am_entries/show/#{@am_entry.id}"
+	end
+
+	get '/am_entries/:id/edit' do
+		@am_entry = AM_Entry.find_by_id(params[:id])
+		erb :'/am_entries/edit'
+	end
+
+	patch '/am'
+		@am_entry = AM_Entry.find_by_id(params[:id])
+		#update attributes here
+		@am_entry.save
+		reroute
+
+	get '/am_entries/:id/delete' do
+		#binding.pry
+		@am_entry = AM_Entry.find_by_id(params[:id])
+		@am_entry.destroy
+		redirect '/index'
 	end
 end
