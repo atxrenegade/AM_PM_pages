@@ -1,1 +1,17 @@
-<h1>  AM Show Page </h1>
+<h1> MORNING PAGES </h1>
+<!--display current date and time here-->
+<!-- format: Month, Day Year 00:00am -->
+
+<h4>Three things I would like to accomplish today are: </h4>
+<%#binding.pry%>
+<% if !@am_entry.goals.empty? %>
+	<% @am_entry.goals.each do |goal| %>
+		<%= "#{n}". goal %>
+	<%end%>
+<%end%>
+
+<h4>It would make today awesome if...</h4>
+
+<h4>Affirmation/Thought of the Day/Words of Encouragement:</h4>
+
+<h4>Five things I am grateful for right now are:</h4>
