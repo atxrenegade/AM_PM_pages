@@ -5,6 +5,7 @@ class AMEntriesController < ApplicationController
 	end
 
 	post '/am_entries/new' do
-		binding.pry
+		#binding.pry
+		erb :'/am_entries/show'
 	end
 end
