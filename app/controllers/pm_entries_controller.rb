@@ -4,7 +4,7 @@ class PMEntriesController < ApplicationController
 	end
 
 	post '/pm_entries/new' do
-		binding.pry
+		#binding.pry
 		@time_date = "Month, Day Year  HH:MM:SS"
 		excellent_array = params["excellent"].values
 		lessons_array = params["lessons"].values
