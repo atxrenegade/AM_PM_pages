@@ -28,4 +28,12 @@
 	<%= @am_entry.words %>
 <%end%>
 
-<!-- Add Edit and Delete Buttons here -->
+<form action="/am_entries/<%=@am_entry.id%>/edit" method="GET">
+	<input id="hidden" type="hidden" name="_method" value="edit">
+	<input type="submit" name="edit" value="Edit Entry">
+</form>
+
+<form action="/am_entries/<%=@am_entry.id%>/delete" method="GET">
+	<input id="hidden" type="hidden" name="_method" value="delete">
+	<input type="submit" name="delete" value="Delete Entry">
+</form>
