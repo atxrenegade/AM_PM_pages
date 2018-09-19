@@ -17,7 +17,7 @@ class AMEntriesController < ApplicationController
 		goals_array = params["goals"].collect{|k, v| v.strip}
 		#binding.pry
 		gratitude_array = params["gratitude"].collect{|k, v| v.strip}
-		binding.pry
+		#binding.pry
 		@am_entry = AM_Entry.new(time_date: @time_date, goals: goals_array, awesome: params["awesome"], affirmation: params["affirmation"], gratitude: gratitude_array, words: params["words"])
 		@am_entry.save
 

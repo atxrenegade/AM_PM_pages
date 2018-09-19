@@ -2,16 +2,30 @@
 <!--display current date and time here-->
 <!-- format: Month, Day Year 00:00am -->
 
-<h4>Three things I would like to accomplish today are: </h4>
-<%#binding.pry%>
-<% if !@am_entry.goals.empty? %>
-	<% @am_entry.goals.each do |goal| %>
-		<%= "#{n}". goal %>
-	<%end%>
+<%if !@am_entry.goals.empty? %>
+	<h4>Three things I would like to accomplish today are: </h4>
+	<!-- <%#binding.pry%>
+	<%# @am_entry.goals.each do |goal| %>
+		<%#= #{goal} %>
+	<%#end%>-->
 <%end%>
 
-<h4>It would make today awesome if...</h4>
+<%if !@am_entry.awesome.empty? %>
+	<h4>It would make today awesome if...</h4>
+<%end%>
 
-<h4>Affirmation/Thought of the Day/Words of Encouragement:</h4>
+<%if !@am_entry.affirmation.empty? %>
+	<h4>Affirmation/Thought of the Day/Words of Encouragement:</h4>
+	<%= @am_entry.affirmation %>
+<%end%>
 
-<h4>Five things I am grateful for right now are:</h4>
+<%if !@am_entry.affirmation.empty? %>
+	<h4>Five things I am grateful for right now are:</h4>
+<%end%>
+
+<%if !@am_entry.words.empty? %>
+	<h4>Additional thoughts/words:</h4>
+	<%= @am_entry.words %>
+<%end%>
+
+<!-- Add Edit and Delete Buttons here -->
