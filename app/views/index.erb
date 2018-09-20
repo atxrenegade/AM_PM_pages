@@ -1,8 +1,6 @@
-<%#binding.pry%>
 <h1><%= current_user["username"]%>'s Morning and Evening Pages</h1>
 <% @entries.each do |entry| %>
 	<% if entry.is_a?(AM_Entry)%>
-
 		<a href='am_entries/show/<%=entry.id%>'><%= entry.id %><a><br>
 	<% else	%>
 		<a href='pm_entries/show/<%=entry.id%>'><%= entry.id %><a><br>
