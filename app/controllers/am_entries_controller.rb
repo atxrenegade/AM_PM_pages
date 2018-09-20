@@ -24,10 +24,9 @@ class AMEntriesController < ApplicationController
 		goals_array = params["goals"].collect{|k, v| v.strip}
 		#binding.pry
 		gratitude_array = params["gratitude"].collect{|k, v| v.strip}
-		#binding.pry
 		@am_entry = AM_Entry.new(time_date: @time_date, goals: goals_array, awesome: params["awesome"], affirmation: params["affirmation"], gratitude: gratitude_array, words: params["words"])
+		@am_entry.user_id = session[:id]
 		@am_entry.save
-
 		redirect "/am_entries/show/#{@am_entry.id}"
 	end
 
