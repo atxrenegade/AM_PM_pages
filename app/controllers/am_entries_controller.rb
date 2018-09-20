@@ -1,5 +1,12 @@
 require_relative 'application_controller.rb'
 class AMEntriesController < ApplicationController
+	get '/am_entries' do
+		binding.pry
+		#am_entries = AM_Entry.all.find_all(AM_Entry.user_id == session[:id])
+		#pm_entries =
+		#@entries = am+pm entries order by date and time(or id number?)
+		erb :'/index'
+	end
 
 	get '/am_entries/new' do
 		erb :'am_entries/new'
@@ -29,14 +36,19 @@ class AMEntriesController < ApplicationController
 		erb :'/am_entries/edit'
 	end
 
-	patch '/am'
+	patch '/am_entries/:id/edit' do
 		@am_entry = AM_Entry.find_by_id(params[:id])
 		#update attributes here
+		#
+		#
+		#
+		#
+		#
 		@am_entry.save
-		reroute
+		redirect '/am_entries/show/#{id}'
+	end
 
 	get '/am_entries/:id/delete' do
-		#binding.pry
 		@am_entry = AM_Entry.find_by_id(params[:id])
 		@am_entry.destroy
 		redirect '/index'
