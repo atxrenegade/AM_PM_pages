@@ -2,8 +2,11 @@ require_relative 'application_controller.rb'
 class AMEntriesController < ApplicationController
 	get '/am_entries' do
 		binding.pry
-		#am_entries = AM_Entry.all.find_all(AM_Entry.user_id == session[:id])
-		#pm_entries =
+		am_entries = AM_Entry.where(user_id: session[:id])
+		pm_entries = PM_Entry.where(user_id: session[:id])
+		@entries = (am_entries + pm_entries).sort_by(&:id)
+		#is there a way to order by timestamp created_on?
+
 		#@entries = am+pm entries order by date and time(or id number?)
 		erb :'/index'
 	end

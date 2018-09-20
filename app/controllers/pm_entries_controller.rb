@@ -1,4 +1,14 @@
 class PMEntriesController < ApplicationController
+	get '/pm_entries' do
+		binding.pry
+		am_entries = AM_Entry.where(user_id: session[:id])
+		pm_entries = PM_Entry.where(user_id: session[:id])
+		@entries = (am_entries + pm_entries).sort_by(&:id)
+		#change to order by timestamps or there will be duplicate ids between am/pm
+
+		erb :'/index'
+	end
+
 	get '/pm_entries/new' do
 		erb :'pm_entries/new'
 	end
