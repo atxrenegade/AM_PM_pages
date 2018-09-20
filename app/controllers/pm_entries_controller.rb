@@ -1,10 +1,10 @@
 class PMEntriesController < ApplicationController
-	get '/pm_entries' do
-		binding.pry
+	get '/index' do
 		am_entries = AM_Entry.where(user_id: session[:id])
 		pm_entries = PM_Entry.where(user_id: session[:id])
 		@entries = (am_entries + pm_entries).sort_by(&:id)
 		#change to order by timestamps or there will be duplicate ids between am/pm
+		#controller action duplicated in am_controller should I remove one?
 
 		erb :'/index'
 	end
@@ -14,7 +14,6 @@ class PMEntriesController < ApplicationController
 	end
 
 	post '/pm_entries/new' do
-		#binding.pry
 		@time_date = "Month, Day Year  HH:MM:SS"
 		excellent_array = params["excellent"].values
 		lessons_array = params["lessons"].values

@@ -26,7 +26,7 @@
 <%if !@am_entry.words.empty? %>
 	<h4>Additional thoughts/words:</h4>
 	<%= @am_entry.words %>
-<%end%>
+<%end%><br><br><br>
 
 <form action="/am_entries/<%=@am_entry.id%>/edit" method="GET">
 	<input id="hidden" type="hidden" name="_method" value="edit">
