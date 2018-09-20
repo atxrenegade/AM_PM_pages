@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_18_005143) do
+ActiveRecord::Schema.define(version: 2018_09_20_034515) do
 
   create_table "am_entries", force: :cascade do |t|
     t.datetime "time_date"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_09_18_005143) do
     t.string "affirmation"
     t.string "gratitude"
     t.string "words"
+    t.integer "user_id"
   end
 
   create_table "pm_entries", force: :cascade do |t|
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_09_18_005143) do
     t.string "lessons"
     t.string "gratitude"
     t.string "thoughts"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
