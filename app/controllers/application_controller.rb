@@ -14,6 +14,7 @@ class ApplicationController < Sinatra::Base
 	end
 
 	helpers do
+		#this is duplicated in concerns
 		def logged_in?
 			!!session[:id]
 		end
