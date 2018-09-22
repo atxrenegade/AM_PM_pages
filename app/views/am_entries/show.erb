@@ -2,16 +2,16 @@
 <!--display current date and time here-->
 <!-- format: Month, Day Year 00:00am -->
 
-<%if !@am_entry.goals.empty? %>
+<%if !@am_entry.goals1.empty? %>
 	<h4>Three things I would like to accomplish today are: </h4>
-	<!-- <%#binding.pry%>
-	<%# @am_entry.goals.each do |goal| %>
-		<%#= #{goal} %>
-	<%#end%>-->
+	<%= @am_entry.goals1 %><br>
+	<%= @am_entry.goals2 %><br>
+	<%= @am_entry.goals3 %><br>
 <%end%>
 
-<%if !@am_entry.awesome.empty? %>
+<%if !@am_entry.awesome == "" %>
 	<h4>It would make today awesome if...</h4>
+	<%= @am_entry.awesome %><br>
 <%end%>
 
 <%if !@am_entry.affirmation.empty? %>
@@ -19,14 +19,20 @@
 	<%= @am_entry.affirmation %>
 <%end%>
 
-<%if !@am_entry.affirmation.empty? %>
+<%if !@am_entry.gratitude1.empty? %>
 	<h4>Five things I am grateful for right now are:</h4>
+	<%= @am_entry.gratitude1 %><br>
+	<%= @am_entry.gratitude2 %><br>
+	<%= @am_entry.gratitude3 %><br>
+	<%= @am_entry.gratitude4 %><br>
+	<%= @am_entry.gratitude5 %><br>
 <%end%>
-
-<%if !@am_entry.words.empty? %>
+<%#binding.pry%>
+<%if !@am_entry.words == "" %>
+<%#binding.pry%>
 	<h4>Additional thoughts/words:</h4>
 	<%= @am_entry.words %>
-<%end%><br><br><br>
+<%end%><br><br>
 
 <form action="/am_entries/<%=@am_entry.id%>/edit" method="GET">
 	<input id="hidden" type="hidden" name="_method" value="edit">
