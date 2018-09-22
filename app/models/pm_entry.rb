@@ -1,4 +1,4 @@
-class PM_Entry < ActiveRecord::Base
+class PMEntry < ActiveRecord::Base
 	belongs_to :user
 
 end

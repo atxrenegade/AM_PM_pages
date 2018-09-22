@@ -1,3 +1,3 @@
-class AM_Entry < ActiveRecord::Base
+class AMEntry < ActiveRecord::Base
 	belongs_to :user
 end
