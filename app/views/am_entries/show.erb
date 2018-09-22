@@ -9,7 +9,7 @@
 	<%= @am_entry.goals3 %><br>
 <%end%>
 
-<%if !@am_entry.awesome == "" %>
+<%if !@am_entry.awesome == " " %>
 	<h4>It would make today awesome if...</h4>
 	<%= @am_entry.awesome %><br>
 <%end%>
@@ -27,9 +27,8 @@
 	<%= @am_entry.gratitude4 %><br>
 	<%= @am_entry.gratitude5 %><br>
 <%end%>
-<%#binding.pry%>
-<%if !@am_entry.words == "" %>
-<%#binding.pry%>
+
+<%if !@am_entry.words == " "  %>
 	<h4>Additional thoughts/words:</h4>
 	<%= @am_entry.words %>
 <%end%><br><br>

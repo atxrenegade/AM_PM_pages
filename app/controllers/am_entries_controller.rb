@@ -16,6 +16,7 @@ class AMEntriesController < ApplicationController
 
 	get '/am_entries/show/:id' do
 		@am_entry = AMEntry.find_by_id(params[:id])
+		#binding.pry
 		erb :'/am_entries/show'
 	end
 
