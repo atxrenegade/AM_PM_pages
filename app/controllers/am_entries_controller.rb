@@ -6,6 +6,7 @@ class AMEntriesController < ApplicationController
 		@entries = (am_entries + pm_entries).sort_by(&:id)
 		#change to order by timestamps or there will be duplicate ids between am/pm how will duplicates be ordered
 
+		#*****format date_created for entry views
 		erb :'/index'
 	end
 
