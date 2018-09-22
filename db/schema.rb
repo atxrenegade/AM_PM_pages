@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_20_034515) do
+ActiveRecord::Schema.define(version: 2018_09_21_175207) do
 
   create_table "am_entries", force: :cascade do |t|
     t.datetime "time_date"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2018_09_20_034515) do
     t.string "gratitude"
     t.string "words"
     t.integer "user_id"
+    t.datetime "created_at", default: "2018-09-21 18:16:00", null: false
+    t.datetime "updated_at", default: "2018-09-21 18:16:00", null: false
   end
 
   create_table "pm_entries", force: :cascade do |t|
@@ -29,6 +31,8 @@ ActiveRecord::Schema.define(version: 2018_09_20_034515) do
     t.string "gratitude"
     t.string "thoughts"
     t.integer "user_id"
+    t.datetime "created_at", default: "2018-09-21 18:16:00", null: false
+    t.datetime "updated_at", default: "2018-09-21 18:16:00", null: false
   end
 
   create_table "users", force: :cascade do |t|

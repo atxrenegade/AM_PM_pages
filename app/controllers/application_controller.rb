@@ -11,15 +11,4 @@ class ApplicationController < Sinatra::Base
 	get '/' do
 		erb :welcome
 	end
-
-	helpers do
-		#this is duplicated in concerns
-		def logged_in?
-			!!session[:id]
-		end
-
-		def current_user
-			User.find(session[:id])
-		end
-	end
 end

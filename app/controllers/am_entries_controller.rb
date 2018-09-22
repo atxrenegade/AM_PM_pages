@@ -1,11 +1,12 @@
-require_relative 'application_controller.rb'
+require_relative 'application_controller.rb' #must stay because of alphabetical controller loding
 class AMEntriesController < ApplicationController
 	get '/index' do
 		#binding.pry
 		am_entries = AM_Entry.where(user_id: session[:id])
 		pm_entries = PM_Entry.where(user_id: session[:id])
 		@entries = (am_entries + pm_entries).sort_by(&:id)
-		#change to order by timestamps or there will be duplicate ids between am/pm
+		#change to order by timestamps or there will be duplicate ids between am/pm how will duplicates be ordered
+
 
 		erb :'/index'
 	end
