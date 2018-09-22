@@ -14,15 +14,11 @@ class PMEntriesController < ApplicationController
 	end
 
 	post '/pm_entries/new' do
-		@time_date = "Month, Day Year  HH:MM:SS"
-		excellent_array = params["excellent"].values
-		lessons_array = params["lessons"].values
-		gratitude_array = params["gratitude"].values
-		@pm_entry = PMEntry.new(time_date: @time_date, excellent: excellent_array, lessons: lessons_array, gratitude: gratitude_array, thoughts: params["thoughts"])
+		@pm_entry = PMEntry.new(excellent1: params["excellent1"], excellent2: params["excellent2"], lessons1: params["lessons1"], lessons1: params["lessons2"], gratitude2: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"], gratitude4: params["gratitude4"], gratitude5: params["gratitude5"], thoughts: params["thoughts"])
 		@pm_entry.user_id = session[:id]
 		@pm_entry.save
 
-		redirect '/pm_entries/#{@pm_entry.id}/show'
+		redirect "/pm_entries/#{@pm_entry.id}/show"
 	end
 
 	get '/pm_entries/:id/edit' do
