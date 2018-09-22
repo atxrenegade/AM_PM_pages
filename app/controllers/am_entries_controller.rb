@@ -19,10 +19,7 @@ class AMEntriesController < ApplicationController
 	end
 
 	post '/am_entries/new' do
-		@time_date = "Month, Day Year  HH:MM:SS"
-		goals_array = params["goals"].collect{|k, v| v.strip}
-		gratitude_array = params["gratitude"].collect{|k, v| v.strip}
-		@am_entry = AMEntry.new(time_date: @time_date, goals: goals_array, awesome: params["awesome"], affirmation: params["affirmation"], gratitude: gratitude_array, words: params["words"])
+		@am_entry = AMEntry.new(goals1: params["goals1"], goals2: params["goals2"], goals3: params["goals3"], awesome: params["awesome"], affirmation: params["affirmation"], gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"], gratitude4: params["gratitude4"], gratitude5: params["gratitude5"], words: params["words"])
 		@am_entry.user_id = session[:id]
 		@am_entry.save
 		redirect "/am_entries/show/#{@am_entry.id}"
