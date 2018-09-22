@@ -9,6 +9,11 @@ class PMEntriesController < ApplicationController
 		erb :'/index'
 	end
 
+	get '/pm_entries/show/:id' do
+		@pm_entry = PMEntry.find_by_id(params[:id])
+		erb :'/pm_entries/show'
+	end
+
 	get '/pm_entries/new' do
 		erb :'pm_entries/new'
 	end
@@ -39,7 +44,7 @@ class PMEntriesController < ApplicationController
 	end
 
 	get '/pm_entries/:id/delete' do
-		@pm_entry = AMEntry.find_by_id(params[:id])
+		@pm_entry = PMEntry.find_by_id(params[:id])
 		@pm_entry.destroy
 		redirect '/index'
 	end
