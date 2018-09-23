@@ -21,21 +21,6 @@ class AMEntriesController < ApplicationController
 		end
 	end
 
-	get '/am_entries/show/:id' do
-		if logged_in?
-			@am_entry = AMEntry.find_by_id(params[:id])
-			if @am_entry && @am_entry.user_id == current_user.id
-				#replace with helper method format date
-				@time_date = @am_entry.created_at.localtime.to_formatted_s(:long_ordinal)
-				erb :'/am_entries/show'
-			else
-				redirect '/index'
-			end
-		else
-			redirect '/login'
-		end
-	end
-
 	post '/am_entries/new' do
 		if logged_in?
 			@am_entry = AMEntry.new(goals1: params["goals1"], goals2: params["goals2"], goals3: params["goals3"], affirmation: params["affirmation"], gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"], gratitude4: params["gratitude4"], gratitude5: params["gratitude5"])
@@ -47,6 +32,21 @@ class AMEntriesController < ApplicationController
 				redirect "/am_entries/show/#{@am_entry.id}"
 			else
 				redirect '/main_menu'
+			end
+		else
+			redirect '/login'
+		end
+	end
+
+	get '/am_entries/show/:id' do
+		if logged_in?
+			@am_entry = AMEntry.find_by_id(params[:id])
+			if @am_entry && @am_entry.user_id == current_user.id
+				#replace with helper method format date
+				@time_date = @am_entry.created_at.localtime.to_formatted_s(:long_ordinal)
+				erb :'/am_entries/show'
+			else
+				redirect '/index'
 			end
 		else
 			redirect '/login'
