@@ -7,4 +7,8 @@ class Helpers < ActiveRecord::Base
    	def current_user
 	   User.find(session[:id])
    	end
+
+	def convert_time
+
+	end
 end
