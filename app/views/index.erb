@@ -1,10 +1,17 @@
 
-<h1><%= current_user["username"]%>'s Morning and Evening Pages</h1>
-<% @entries.each do |entry| %>
-	<% if entry.is_a?(AMEntry)%>
-
-		<a href='am_entries/show/<%=entry.id%>'><%= entry.id %><a><br>
-	<% else	%>
-		<a href='pm_entries/show/<%=entry.id%>'><%= entry.id %><a><br>
-	<% end %>
+<h1><%=@user%>'s Morning and Evening Pages</h1>
+<%@entries.each do |entry| %>
+	<%if entry.is_a?(AMEntry)%>
+		<% #to be replaced with helper method format_time %>
+		<% date = entry.created_at.localtime.to_formatted_s(:long_ordinal)%>
+		<a href='am_entries/show/<%=entry.id%>'><%= date %><a><br>
+	<%else%>
+		<% #to be replaced with helper method format_time %>
+		<%date = entry.created_at.localtime.to_formatted_s(:long_ordinal)%>
+		<a href='pm_entries/show/<%=entry.id%>'><%= date %><a><br>
+	<%end%>
 <%end%>
+
+<form action="/main_menu">
+	<input type="submit"class="button" value="Back to Main Menu">
+</form>

@@ -1,10 +1,11 @@
-require_relative 'application_controller.rb' #must stay because of alphabetical controller loding
+require_relative 'application_controller.rb' #must stay because of alphabetical controller loading
 class AMEntriesController < ApplicationController
 	get '/index' do
-		binding.pry
 		am_entries = AMEntry.where(user_id: session[:id])
 		pm_entries = PMEntry.where(user_id: session[:id])
 		@entries = (am_entries + pm_entries).sort_by(&:created_at)
+		#binding.pry
+		@user = User.find(session[:id]).username.strip #replace with current_user method when working
 
 		erb :'/index'
 	end
@@ -15,6 +16,7 @@ class AMEntriesController < ApplicationController
 
 	get '/am_entries/show/:id' do
 		@am_entry = AMEntry.find_by_id(params[:id])
+		#replace with helper method format date
 		@time_date = @am_entry.created_at.localtime.to_formatted_s(:long_ordinal)
 		erb :'/am_entries/show'
 	end

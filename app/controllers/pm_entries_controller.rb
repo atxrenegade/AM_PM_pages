@@ -22,6 +22,7 @@ class PMEntriesController < ApplicationController
 
 	get '/pm_entries/show/:id' do
 		@pm_entry = PMEntry.find_by_id(params[:id])
+		#replace with helper method format_date
 		@time_date = @pm_entry.created_at.localtime.to_formatted_s(:long_ordinal)
 		erb :'/pm_entries/show'
 	end

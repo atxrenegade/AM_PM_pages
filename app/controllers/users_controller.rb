@@ -35,4 +35,8 @@ class UsersController < ApplicationController
 		session.clear
 		redirect '/'
 	end
+
+	get '/main_menu' do
+		erb :main_menu
+	end
 end
