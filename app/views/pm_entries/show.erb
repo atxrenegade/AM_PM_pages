@@ -1,5 +1,37 @@
 <h1>  PM Show Page </h1>
 
+<!--display current date and time here-->
+<!-- format: Month, Day Year 00:00am -->
+
+<%if !@pm_entry.excellent1.empty? %>
+	<h4>Two things today that went really well or exceeded my expectations were: </h4>
+	<%= @pm_entry.excellent1 %><br>
+	<%= @pm_entry.excellent2 %><br>
+<%end%>
+
+<%if !@pm_entry.lessons1.empty? %>
+<h4>Three lessons I learned today, or ways I could have made the day better:</h4>
+	<%= @pm_entry.lessons1 %><br>
+	<%= @pm_entry.lessons2 %><br>
+	<%= @pm_entry.lessons3 %><br>
+<%end%>
+
+<%if !@pm_entry.gratitude1.empty? %>
+	<h4>Five things I am grateful for right now are:</h4>
+	<%= @pm_entry.gratitude1 %><br>
+	<%= @pm_entry.gratitude2 %><br>
+	<%= @pm_entry.gratitude3 %><br>
+	<%= @pm_entry.gratitude4 %><br>
+	<%= @pm_entry.gratitude5 %><br>
+<%end%>
+
+<% #binding.pry %>
+<%if !@pm_entry.thoughts.empty?  %>
+	<h4>Additional thoughts/words:</h4>
+	<%= @pm_entry.thoughts %>
+<%end%><br><br>
+
+
 
 
 
