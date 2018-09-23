@@ -44,7 +44,7 @@ class PMEntriesController < ApplicationController
 		redirect '/pm_entries/show/#{id}'
 	end
 
-	get '/pm_entries/:id/delete' do
+	delete '/pm_entries/:id/delete' do
 		@pm_entry = PMEntry.find_by_id(params[:id])
 		@pm_entry.destroy
 		redirect '/index'

@@ -35,19 +35,17 @@ class AMEntriesController < ApplicationController
 		erb :'/am_entries/edit'
 	end
 
-	patch '/am_entries/:id/edit' do
+	patch '/am_entries/edit' do
 		@am_entry = AMEntry.find_by_id(params[:id])
-		#update attributes here
-		#
-		#
-		#
-		#
-		#
+		@am_entry = AMEntry.update(goals1: params["goals1"], goals2: params["goals2"], goals3: params["goals3"], affirmation: params["affirmation"], gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"], gratitude4: params["gratitude4"], gratitude5: params["gratitude5"])
+		@am_entry.awesome = params["awesome"].strip
+		@am_entry.words = params["words"].strip
+		@am_entry.user_id = session[:id]
 		@am_entry.save
-		redirect '/am_entries/show/#{id}'
+		redirect "/am_entries/show/#{@am_entry.id}"
 	end
 
-	get '/am_entries/:id/delete' do
+	delete '/am_entries/:id/delete' do
 		@am_entry = AMEntry.find_by_id(params[:id])
 		@am_entry.destroy
 		redirect '/index'
