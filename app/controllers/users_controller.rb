@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 			else
 				@user = User.new(username: params["username"], email: params["email"], password: params["password"])
 				@user.save
+				session[:id] = @user.id
 				erb :'/main_menu'
 			end
 		else
@@ -53,7 +54,7 @@ class UsersController < ApplicationController
 			redirect '/'
 		else
 			redirect '/login'
-		end		
+		end
 	end
 
 	get '/main_menu' do
