@@ -1,12 +1,11 @@
 require_relative 'application_controller.rb' #must stay because of alphabetical controller loding
 class AMEntriesController < ApplicationController
 	get '/index' do
+		binding.pry
 		am_entries = AMEntry.where(user_id: session[:id])
 		pm_entries = PMEntry.where(user_id: session[:id])
-		@entries = (am_entries + pm_entries).sort_by(&:id)
-		#change to order by timestamps or there will be duplicate ids between am/pm how will duplicates be ordered
+		@entries = (am_entries + pm_entries).sort_by(&:created_at)
 
-		#*****format date_created for entry views
 		erb :'/index'
 	end
 
