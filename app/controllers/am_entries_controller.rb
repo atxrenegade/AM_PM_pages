@@ -24,9 +24,13 @@ class AMEntriesController < ApplicationController
 	get '/am_entries/show/:id' do
 		if logged_in?
 			@am_entry = AMEntry.find_by_id(params[:id])
-			#replace with helper method format date
-			@time_date = @am_entry.created_at.localtime.to_formatted_s(:long_ordinal)
-			erb :'/am_entries/show'
+			if @am_entry && @am_entry.user_id == current_user.id
+				#replace with helper method format date
+				@time_date = @am_entry.created_at.localtime.to_formatted_s(:long_ordinal)
+				erb :'/am_entries/show'
+			else
+				redirect '/index'
+			end
 		else
 			redirect '/login'
 		end
@@ -38,8 +42,12 @@ class AMEntriesController < ApplicationController
 			@am_entry.awesome = params["awesome"].strip
 			@am_entry.words = params["words"].strip
 			@am_entry.user_id = session[:id]
-			@am_entry.save
-			redirect "/am_entries/show/#{@am_entry.id}"
+			if @am_entry && @am_entry.user_id == current_user.id
+				@am_entry.save
+				redirect "/am_entries/show/#{@am_entry.id}"
+			else
+				redirect '/main_menu'
+			end
 		else
 			redirect '/login'
 		end
@@ -48,7 +56,11 @@ class AMEntriesController < ApplicationController
 	get '/am_entries/:id/edit' do
 		if logged_in?
 			@am_entry = AMEntry.find_by_id(params[:id])
-			erb :'/am_entries/edit'
+			if @am_entry && @am_entry.user_id == current_user.id
+				erb :'/am_entries/edit'
+			else
+				redirect '/main_menu'
+			end
 		else
 			redirect '/login'
 		end
@@ -58,10 +70,14 @@ class AMEntriesController < ApplicationController
 		#controller action not working correctly
 		if logged_in?
 			@am_entry = AMEntry.find_by_id(params[:id])
-			@am_entry = AMEntry.update(params["goals1"], params["goals2"], params["goals3"], params["awesome"].strip, params["affirmation"],
-		 	params["words"].strip, params["gratitude1"], params["gratitude2"], params["gratitude3"],  params["gratitude4"], params["gratitude5"])
-			@am_entry.save
-			redirect "/am_entries/show/#{@am_entry.id}"
+			if @am_entry && @am_entry.user_id == current_user.id
+				@am_entry = AMEntry.update(params["goals1"], params["goals2"], params["goals3"], params["awesome"].strip, params["affirmation"],
+			 	params["words"].strip, params["gratitude1"], params["gratitude2"], params["gratitude3"],  params["gratitude4"], params["gratitude5"])
+				@am_entry.save
+				redirect "/am_entries/show/#{@am_entry.id}"
+			else
+				redirect '/main_menu'
+			end
 		else
 			redirect '/login'
 		end
@@ -71,8 +87,12 @@ class AMEntriesController < ApplicationController
 		#this controller action is NOT working correctly
 		if logged_in?
 			@am_entry = AMEntry.find_by_id(params[:id])
-			@am_entry.destroy
-			redirect '/index'
+			if @am_entry && @am_entry.user_id == current_user.id
+				@am_entry.destroy
+				redirect '/index'
+			else
+				redirect '/main_menu'
+			end
 		else
 			redirect '/login'
 		end
