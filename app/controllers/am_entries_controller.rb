@@ -68,7 +68,7 @@ class AMEntriesController < ApplicationController
 	end
 
 	delete '/am_entries/:id/delete' do
-		#not sure if this controller action is working correctly
+		#this controller action is NOT working correctly
 		if logged_in?
 			@am_entry = AMEntry.find_by_id(params[:id])
 			@am_entry.destroy
