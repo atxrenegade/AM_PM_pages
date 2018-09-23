@@ -21,7 +21,9 @@ class AMEntriesController < ApplicationController
 	end
 
 	post '/am_entries/new' do
-		@am_entry = AMEntry.new(goals1: params["goals1"], goals2: params["goals2"], goals3: params["goals3"], awesome: params["awesome"], affirmation: params["affirmation"], gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"], gratitude4: params["gratitude4"], gratitude5: params["gratitude5"], words: params["words"])
+		@am_entry = AMEntry.new(goals1: params["goals1"], goals2: params["goals2"], goals3: params["goals3"], affirmation: params["affirmation"], gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"], gratitude4: params["gratitude4"], gratitude5: params["gratitude5"])
+		@am_entry.awesome = params["awesome"].strip
+		@am_entry.words = params["words"].strip
 		@am_entry.user_id = session[:id]
 		@am_entry.save
 		redirect "/am_entries/show/#{@am_entry.id}"
