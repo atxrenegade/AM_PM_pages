@@ -66,7 +66,7 @@ class PMEntriesController < ApplicationController
 	patch '/pm_entries/:id' do
 		if logged_in?
 			@pm_entry = PMEntry.find_by_id(params[:id])
-				if @pm_entry && @pm_entry.user_id == current_user.id
+			if @pm_entry && @pm_entry.user_id == current_user.id
 				@pm_entry = PMEntry.update(params["excellent1"], params["excellent2"],  params["lessons1"], params["lessons2"], params["thoughts"].strip, params["gratitude1"], params["gratitude2"], params["gratitude3"], params["gratitude4"],  params["gratitude5"])
 				@pm_entry.save
 				redirect "/pm_entries/show/#{@pm_entry.id}"
