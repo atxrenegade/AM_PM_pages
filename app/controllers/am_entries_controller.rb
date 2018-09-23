@@ -16,7 +16,7 @@ class AMEntriesController < ApplicationController
 
 	get '/am_entries/show/:id' do
 		@am_entry = AMEntry.find_by_id(params[:id])
-		#binding.pry
+		@time_date = @am_entry.created_at.localtime.to_formatted_s(:long_ordinal)
 		erb :'/am_entries/show'
 	end
 
