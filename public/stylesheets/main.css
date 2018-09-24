@@ -23,6 +23,7 @@
 - Utilities
 - Clearing
 - Media Queries
+- Background Images
 */
 
 
@@ -33,7 +34,7 @@
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
   box-sizing: border-box;}
 .column,
 .columns {
@@ -127,6 +128,7 @@ are based on 10px sizing. So basically 1.5rem = 15px :) */
 html {
   font-size: 62.5%; }
 body {
+  height: 100%;
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.0;
   font-weight: 400;
@@ -150,7 +152,7 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
 
 /* Larger than phablet */
 @media (min-width: 550px) {
-  h1 { font-size: 5.0rem;  line-height: 1.2; font-family: 'Dancing Script', cursive;}
+  h1 { font-size: 5.0rem;  line-height: 1.2; letter-spacing: .2rem; font-family: 'Dancing Script', cursive;}
   h2 { font-size: 4.2rem; }
   h3 { font-size: 2.0rem; }
   h4 { font-size: 1.5rem; font-family: Raleway; }
@@ -327,22 +329,6 @@ pre > code {
   padding: 1rem 1.5rem;
   white-space: pre; }
 
-
-/* Tables
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-th,
-td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #E1E1E1; }
-th:first-child,
-td:first-child {
-  padding-left: 0; }
-th:last-child,
-td:last-child {
-  padding-right: 0; }
-
-
 /* Spacing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 button,
@@ -424,3 +410,18 @@ there.
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
+
+/* Background Images
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.bg {
+    /* The image used */
+    background-image: href="images/olivier-miche-156972-unsplash.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
