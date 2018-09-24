@@ -1,9 +1,11 @@
+<br>
+<h1> Welcome, My Friend! </h1>
+<br><br>
 <%if flash.has?(:message)%>
 	<%= flash[:message]%>
-<%end%>	
-
+<%end%>
 <h4> Existing Users Please Log In Below: </h4>
 <form action="/login" method="POST">
-<h4><input type="text" name="username" placeholder="Username:" </h4>
-<h4><input type="text" name="password" placeholder="Password:"</h4><br>
+<h4>Username:  <input type="text" name="username" style="width: 240px;"><br>
+Password:  <input type="text" name="password" style="width: 240px;"</h4><br>
 <h4><input type="submit" value="LOG IN"</h4><br><br>
