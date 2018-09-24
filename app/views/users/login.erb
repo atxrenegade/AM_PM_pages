@@ -2,7 +2,7 @@
 <h1> Welcome, My Friend! </h1>
 <br><br>
 <%if flash.has?(:message)%>
-	<%= flash[:message]%>
+	<h5><%= flash[:message]%></h5>
 <%end%>
 <h4> Existing Users Please Log In Below: </h4>
 <form action="/login" method="POST">

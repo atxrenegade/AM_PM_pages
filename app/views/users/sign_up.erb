@@ -1,11 +1,12 @@
+<br>
+<h1> Welcome, My Friend! </h1>
+<br><br>
 <%if flash.has?(:message)%>
-	<%= flash[:message]%>
+	<h5><%= flash[:message]%></h5>
 <%end%>
-
 <h4> New Users Please Sign Up Below: </h4>
 <form action="/sign_up" method="POST">
-<h4><input type="text" name="username" placeholder="Username:" </h4><br>
-<h4><input type="text" name="email" placeholder="Email:"</h4><br>
-<h4><input type="text" name="password" placeholder="Password:"</h4><br>
-
-<h4><input type="submit" value="SIGN UP"</h4><br><br>
+<h4>Username:  <input type="text" name="username" style="width: 240px;"><br>
+&nbsp;Password:  <input type="text" name="password" style="width: 240px;"><br>
+&emsp; &ensp;Email:  <input type="text" name="email" style="width: 240px;"><br>
+<input type="submit" value="SIGN UP"</h4><br>
