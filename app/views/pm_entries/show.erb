@@ -33,7 +33,7 @@
 	<input type="submit" name="edit" value="Edit Entry">
 </form>
 
-<form action="/pm_entries/<%=@pm_entry.id%>/delete" method="GET">
+<form action="/pm_entries/<%=@pm_entry.id%>/delete" method="POST">
 	<input id="hidden" type="hidden" name="_method" value="delete">
 	<input type="submit" name="delete" value="Delete Entry">
 </form>
@@ -41,4 +41,4 @@
 <form action="/main_menu">
 	<input type="submit"class="button" value="Back to Main Menu">
 </form>
-<br><br>
+<br>
