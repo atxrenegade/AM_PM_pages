@@ -3,11 +3,11 @@
 <%@entries.each do |entry| %>
 	<%if entry.is_a?(AMEntry)%>
 		<% #to be replaced with helper method format_time %>
-		<% date = entry.created_at.localtime.to_formatted_s(:long_ordinal)%>
+		<% date = entry.updated_at.localtime.to_formatted_s(:long_ordinal)%>
 		<a href='am_entries/show/<%=entry.id%>'><%= date %><a><br>
 	<%else%>
 		<% #to be replaced with helper method format_time %>
-		<%date = entry.created_at.localtime.to_formatted_s(:long_ordinal)%>
+		<%date = entry.updated_at.localtime.to_formatted_s(:long_ordinal)%>
 		<a href='pm_entries/show/<%=entry.id%>'><%= date %><a><br>
 	<%end%>
 <%end%>
