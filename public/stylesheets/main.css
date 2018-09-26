@@ -135,7 +135,7 @@ html {
   font-size: 62.5%; }
 body {
   height: 100%;
-  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  font-size: 1.5rem; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.0;
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -150,8 +150,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 2rem;
   font-weight: 300; }
 h1 { font-size: 5.0rem; line-height: 1.2;  letter-spacing: .2rem; font-family: 'Dancing Script', cursive; font-color: white; opacity: 0.8;}
-h2 { font-size: 2.2rem; line-height: .7; font-color: white; font-family: font-family: Arial, Helvetica, sans-serif; letter-spacing: .6rem;}
-h3 { font-size: 2.0rem; line-height: .7;  letter-spacing: 0; color: #1EAEDB; }
+h2 { font-size: 2.0rem; line-height: 2.4rem;  letter-spacing: 0; color: white; font-family: Arial, Helvetica, sans-serif; }
+h3 { font-size: 2.0rem; line-height: 2.4rem;  letter-spacing: 0.3; color: #BFEFFF; font-family: Arial, Helvetica, sans-serif; }
 h4 { font-size: 1.5rem; line-height: .5; letter-spacing: 0; font-family: Raleway;}
 h5 { font-size: 1.2rem; line-height: .7;  letter-spacing: 0; color: #800000; }
 h6 { font-size: 1.5rem; line-height: 1;  letter-spacing: 0; color: #F3E5AB; }
@@ -159,26 +159,27 @@ h6 { font-size: 1.5rem; line-height: 1;  letter-spacing: 0; color: #F3E5AB; }
 /* Larger than phablet */
 @media (min-width: 550px) {
   h1 { font-size: 5.0rem;  line-height: .8; letter-spacing: .2rem; font-family: 'Dancing Script', cursive; font-color: white; opacity: 0.8;}
-  h2 {font-size: 2.2rem; font-family: font-family: Arial, Helvetica, sans-serif; letter-spacing: .6rem;}
-  h3 { font-size: 2.0rem; }
+  h2 { font-size: 1.0rem; line-height: 2.4rem;  letter-spacing: 0; color: white; font-family: Arial, Helvetica, sans-serif; }
+  h3 { font-size: 2.4rem; line-height: 2.4rem;  letter-spacing: .3; color: color: #BFEFFF; font-family: Arial, Helvetica, sans-serif; }
   h4 { font-size: 1.5rem; }
   h5 { font-size: 1.2rem; }
   h6 { font-size: 1.5rem; }
 }
 
-p {margin-top: 1px; font-size: 1.0rem;  letter-spacing: .6rem;}
+
 
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB; }
+  color: #BFEFFF; }
 a:hover {
   color: #0FA0CE; }
 
 
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
 .button,
 button,
 input[type="submit"],
