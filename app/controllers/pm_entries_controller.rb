@@ -67,8 +67,7 @@ class PMEntriesController < ApplicationController
 		if logged_in?
 			@pm_entry = PMEntry.find_by_id(params[:id])
 			if @pm_entry && @pm_entry.user_id == current_user.id
-				@pm_entry = PMEntry.update(params["excellent1"], params["excellent2"],  params["lessons1"], params["lessons2"], params["thoughts"].strip, params["gratitude1"], params["gratitude2"], params["gratitude3"], params["gratitude4"],  params["gratitude5"])
-				@pm_entry.save
+				@pm_entry.update(excellent1: params["excellent1"], excellent2: params["excellent2"],  lessons1: params["lessons1"], lessons2: params["lessons2"], thoughts: params["thoughts"].strip, gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"], gratitude4: params["gratitude4"],  gratitude5: params["gratitude5"])
 				redirect "/pm_entries/show/#{@pm_entry.id}"
 			else
 				redirect '/main_menu'
