@@ -5,7 +5,7 @@ class AMEntriesController < ApplicationController
 		if logged_in?
 			am_entries = AMEntry.where(user_id: session[:id])
 			pm_entries = PMEntry.where(user_id: session[:id])
-			@entries = (am_entries + pm_entries).sort_by(&:created_at)
+			@entries = (am_entries + pm_entries).sort_by(&:updated_at)
 			#binding.pry
 			@user = User.find(session[:id]).username.strip #replace with current_user method when working
 			erb :'/index'

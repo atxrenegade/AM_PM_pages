@@ -1,16 +1,5 @@
 class PMEntriesController < ApplicationController
-	get '/index' do
-		if logged_in?
-			am_entries = AMEntry.where(user_id: session[:id])
-			pm_entries = PMEntry.where(user_id: session[:id])
-			@entries = (am_entries + pm_entries).sort_by(&:created_at)
-			#controller action duplicated in am_controller should I remove one?
-			erb :'/index'
-		else
-			redirect '/login'
-		end
-	end
-
+	
 	get '/pm_entries/new' do
 		if logged_in?
 			erb :'pm_entries/new'
