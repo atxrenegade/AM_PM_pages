@@ -6,8 +6,7 @@ class AMEntriesController < ApplicationController
 			am_entries = AMEntry.where(user_id: session[:id])
 			pm_entries = PMEntry.where(user_id: session[:id])
 			@entries = (am_entries + pm_entries).sort_by(&:updated_at)
-			#binding.pry
-			@user = User.find(session[:id]).username.strip #replace with current_user method when working
+			@user = User.find(session[:id]).username.strip
 			erb :'/index'
 		else
 			redirect '/login'
@@ -68,14 +67,11 @@ class AMEntriesController < ApplicationController
 	end
 
 	patch '/am_entries/:id' do
-		#controller action not working correctly
 		if logged_in?
 			@am_entry = AMEntry.find_by_id(params[:id])
 			if @am_entry && @am_entry.user_id == current_user.id
 				@am_entry.update(goals1: params["goals1"], goals2: params["goals2"], goals3: params["goals3"], awesome: params["awesome"].strip, affirmation: params["affirmation"],
 			 	words: params["words"].strip, gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"],  gratitude4: params["gratitude4"], gratitude5: params["gratitude5"], user_id: current_user.id)
-				binding.pry
-				#error message says undefined method `id' when I can clearly see this value which it appears to be reassigning to the value 1 after using update.
 				redirect "/am_entries/show/#{@am_entry.id}"
 			else
 				redirect '/main_menu'
