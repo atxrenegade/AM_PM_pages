@@ -1,16 +1,15 @@
 
 <h1><%=@user%>'s Morning and Evening Pages</h1>
 <%@entries.each do |entry| %>
+	<h3>
 	<%if entry.is_a?(AMEntry)%>
-		<% #to be replaced with helper method format_time %>
-		<% date = entry.updated_at.localtime.to_formatted_s(:long_ordinal)%>
+		<%date = entry.convert_time%>
 		<a href='am_entries/show/<%=entry.id%>'><%= date %><a><br>
 	<%else%>
-		<% #to be replaced with helper method format_time %>
-		<%date = entry.updated_at.localtime.to_formatted_s(:long_ordinal)%>
+		<%date = entry.convert_time%>
 		<a href='pm_entries/show/<%=entry.id%>'><%= date %><a><br>
 	<%end%>
-<%end%>
+<%end%></h3>
 <br>
 
 <form action="/main_menu">
