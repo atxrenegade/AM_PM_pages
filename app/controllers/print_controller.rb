@@ -1,2 +1,0 @@
-class PrintController < ApplicationController
-end
