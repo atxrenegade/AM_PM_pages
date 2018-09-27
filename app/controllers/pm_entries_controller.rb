@@ -1,5 +1,5 @@
 class PMEntriesController < ApplicationController
-	
+
 	get '/pm_entries/new' do
 		if logged_in?
 			erb :'pm_entries/new'
@@ -28,8 +28,7 @@ class PMEntriesController < ApplicationController
 		if logged_in?
 			@pm_entry = PMEntry.find_by_id(params[:id])
 			if @pm_entry && @pm_entry.user_id == current_user.id
-				#replace with helper method format_date
-				@time_date = @pm_entry.created_at.localtime.to_formatted_s(:long_ordinal)
+				@entry_date = @pm_entry.convert_time		
 				erb :'/pm_entries/show'
 			else
 				redirect '/main_menu'

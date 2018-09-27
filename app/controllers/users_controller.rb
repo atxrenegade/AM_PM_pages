@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 				flash[:message] = "Sign up error. Please complete all the fields below."
 				redirect '/sign_up'
 			else
-				@user = User.new(username: params["username"], email: params["email"], password: params["password"])
+				@user = User.new(username: params["username"].strip, email: params["email"].strip, password: params["password"].strip)
 				@user.save
 				session[:id] = @user.id
 				erb :'/main_menu'

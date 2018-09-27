@@ -42,8 +42,7 @@ class AMEntriesController < ApplicationController
 		if logged_in?
 			@am_entry = AMEntry.find_by_id(params[:id])
 			if @am_entry && @am_entry.user_id == current_user.id
-				#replace with helper method format date
-				@time_date = @am_entry.created_at.localtime.to_formatted_s(:long_ordinal)
+				@entry_date = @am_entry.convert_time
 				erb :'/am_entries/show'
 			else
 				redirect '/index'
