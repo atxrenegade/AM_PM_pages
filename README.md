@@ -1,6 +1,10 @@
 # Morning and Evening Pages
 
-One Paragraph of project description goes here
+Morning and Evening pages is an application to assist users in creating a morning and evening ritual of intention setting, gratitude and reflection.
+
+This application pages was designed to encourage and implement the use by daily practice, conscious focus and repetition to create new neural pathways leading to conscious living and away from subconscious reactivity.  Throughout our hasty lifestyles our attention and focus is constantly being directed from our goals and intentions as we are bombarded by the latest media driven fear and the continuous perceived threat to our survival. While technology has enhanced our lives in many ways, I believe that it can be more beneficially used to create and develop mindfulness and healthier perspectives of our world.
+
+Sign up and/or Login to follow the easy to use menu options to create, review, edit or delete Morning and Evening pages.  Your entries remain private and confidential for your own viewing or revision. This site and service is free and easy to use. 
 
 ## Getting Started
 
@@ -23,7 +27,7 @@ install on local server.
 
 5. To View Entry Index or Existing Entry - Select View or Edit Existing Entries this will take you to an index of your entries sorted by date and time. Select you the entry you would like to view.
 
-6. To Edit or Delete Entry - Follow the steps to View Existing Entry in #5. Once you are on the display page for the entry you would like to edit or delete select edit entry to edit, or delete entry to delete. If you choose to edit the entry don't forget to save your changes. 
+6. To Edit or Delete Entry - Follow the steps to View Existing Entry in #5. Once you are on the display page for the entry you would like to edit or delete select edit entry to edit, or delete entry to delete. If you choose to edit the entry don't forget to save your changes.
 
 7. About Page - describes the purpose and intention of the app, how to use it and who it was created by.
 
