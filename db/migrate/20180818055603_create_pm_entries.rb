@@ -1,7 +1,7 @@
 class CreatePmEntries < ActiveRecord::Migration[5.2]
   	def change
 	  	create_table :pm_entrys do |t|
-			t.timestamp :time_date
+			t.timestamps null: false
 			t.string :excellent
 			t.string :lessons
 			t.string :gratitude

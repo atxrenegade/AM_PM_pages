@@ -13,12 +13,12 @@
 ActiveRecord::Schema.define(version: 2018_09_22_035646) do
 
   create_table "am_entries", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "awesome"
     t.string "affirmation"
     t.string "words"
     t.integer "user_id"
-    t.datetime "created_at", default: "2018-09-21 18:16:00", null: false
-    t.datetime "updated_at", default: "2018-09-21 18:16:00", null: false
     t.string "goals1"
     t.string "goals2"
     t.string "goals3"
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 2018_09_22_035646) do
   end
 
   create_table "pm_entries", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "thoughts"
     t.integer "user_id"
-    t.datetime "created_at", default: "2018-09-21 18:16:00", null: false
-    t.datetime "updated_at", default: "2018-09-21 18:16:00", null: false
     t.string "excellent1"
     t.string "excellent2"
     t.string "lessons1"
