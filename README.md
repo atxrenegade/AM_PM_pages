@@ -4,7 +4,7 @@ Morning and Evening pages is an application to assist users in creating a mornin
 
 This application pages was designed to encourage and implement the use by daily practice, conscious focus and repetition to create new neural pathways leading to conscious living and away from subconscious reactivity.  Throughout our hasty lifestyles our attention and focus is constantly being directed from our goals and intentions as we are bombarded by the latest media driven fear and the continuous perceived threat to our survival. While technology has enhanced our lives in many ways, I believe that it can be more beneficially used to create and develop mindfulness and healthier perspectives of our world.
 
-Sign up and/or Login to follow the easy to use menu options to create, review, edit or delete Morning and Evening pages.  Your entries remain private and confidential for your own viewing or revision. This site and service is free and easy to use. 
+Sign up and/or Login to follow the easy to use menu options to create, review, edit or delete Morning and Evening pages.  Your entries remain private and confidential for your own viewing or revision. This site and service is free and easy to use.
 
 ## Getting Started
 
@@ -70,6 +70,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Photographer(s): Olivier Miche - (https://www.photosomi.com/?utm_medium=referral&utm_source=unsplash)
-* FlatIron School Section Leads and Technical Coaches: Howard Devennish, and Jennifer Hansen for their knowledge and debugging assistance
+* Flatiron School Section Leads and Technical Coaches: Howard Devennish, and Jennifer Hansen for their knowledge and debugging assistance
 * Inspiration: Inspiration for this project came from many sources, including Dr. Joe Dispenza, Tim Ferris, and my own daily gratitude and meditation practices, and a shout out to "Five Minute Journal" for a very parallel implementation of this concept.
 * Technical and Moral Support: Avi Flombaum
