@@ -11,15 +11,15 @@ configure :development do
 end
 
 configure :production do
- db = URI.parse(ENV['DATABASE_URL'] || 'postgres://jsdorqplpesxjo:258eed1016203d694274c17cafddd35d55f3056a8427e2c26b30a29fbe88d3c5@ec2-54-243-46-32.compute-1.amazonaws.com:5432/dbcq1vvfaq8pv2')
+  db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
 
- ActiveRecord::Base.establish_connection(
-   :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
-   :host     => 'ec2-54-243-46-32.compute-1.amazonaws.com',
-   :username => 'jsdorqplpesxjo',
-   :password => '258eed1016203d694274c17cafddd35d55f3056a8427e2c26b30a29fbe88d3c5',
-   :database => 'dbcq1vvfaq8pv2',
-   :encoding => 'utf8'
+ActiveRecord::Base.establish_connection(
+  :adapter => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+  :host     => db.host,
+  :username => db.user,
+  :password => db.password,
+  :database => db.path[1..-1],
+  :encoding => 'utf8'
  )
 end
 
