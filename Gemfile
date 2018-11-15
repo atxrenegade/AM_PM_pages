@@ -1,19 +1,21 @@
+source 'http://rubygems.org'
 
-source "https://rubygems.org"
-
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
-
-
-gem 'pg', '~> 0.18'
 gem 'sinatra'
-gem 'activerecord', require: 'active_record'
-gem 'sinatra-activerecord', require: 'sinatra/activerecord'
+gem 'activerecord', :require => 'active_record'
+gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'rake'
-gem 'thin'
 gem 'require_all'
-gem 'bcrypt'
-gem 'rack-flash3'
-
+gem 'thin'
 gem 'shotgun'
 gem 'pry'
+gem 'bcrypt'
 gem 'tux'
+gem 'pg'
+gem 'rack-flash3', '~> 1.0', '>= 1.0.5'
+
+gem 'rspec'
+gem 'rack-test'
+
+group :development do
+  gem 'sqlite3'
+end

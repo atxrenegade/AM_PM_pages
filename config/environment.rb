@@ -1,13 +1,11 @@
 require 'bundler'
 Bundler.require
 
-#ActiveRecord::Base.establish_connection(
-#	adapter: "sqlite3",
-#	database: "db/development.sqlite"
-
 configure :development do
- set :database, 'sqlite:///dev.db'
- set :show_exceptions, true
+	ActiveRecord::Base.establish_connection(
+	adapter: "sqlite3",
+	database: "db/development.sqlite"
+	)
 end
 
 configure :production do
