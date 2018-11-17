@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_17_045725) do
+ActiveRecord::Schema.define(version: 2018_11_17_060959) do
 
   create_table "am_entries", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 2018_11_17_045725) do
     t.string "gratitude3"
     t.string "gratitude4"
     t.string "gratitude5"
-    t.string "proud_1"
-    t.string "proud_2"
+    t.string "proud1"
+    t.string "proud2"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,7 +1,7 @@
 <h1> Morning Pages </h1>
 <h3><%= @entry_date %></h3>
-<br><br>
 <h4>
+<br>
 	<form action='/am_entries/<%=@am_entry.id%>' method="POST">
 		<input type="hidden" name="_method" value="PATCH">
 		<br><br><br><label>Three things I would like to accomplish today are: </label><br><br>
