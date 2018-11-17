@@ -250,7 +250,8 @@ input[type="url"],
 input[type="password"],
 input,
 textarea,
-select {
+select,
+body > div > div > div > h4 > form:nth-child(1) > input[type="text"] {
   font-size: 1.4rem;
   opacity: .2;
   height: 38px;
@@ -275,7 +276,8 @@ textarea {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none; }
-textarea {
+textarea,
+body > div > div > div > form > div > h4 > textarea {
 	opacity: 0.5;
 	margin: 0;
   	min-height: 65px;
@@ -295,7 +297,8 @@ select:focus {
   border: 1px solid #33C3F0;
   outline: 0; }
 label,
-legend {
+legend
+body > div > div > div > h4 > form:nth-child(1) > label {
   display: block;
   margin-bottom: 0px;
   font-weight: 400px;
