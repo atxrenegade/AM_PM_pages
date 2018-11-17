@@ -251,12 +251,17 @@ input[type="text"],
 input[type="tel"],
 input[type="url"],
 input[type="password"],
+input,
 textarea,
 select {
   font-size: 1.4rem;
   opacity: .2;
   height: 38px;
   width: 600px;
+  }
+  textarea {
+	  height: 120px;
+	  width: 600px;
   }
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: #fff;
@@ -297,6 +302,8 @@ select:focus {
 label,
 legend {
   display: block;
+  margin-bottom: 0px;
+ font-weight: 400px;
    }
 fieldset {
   padding: 0;
