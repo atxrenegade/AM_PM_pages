@@ -1,23 +1,27 @@
 <h1> Morning Pages </h1>
 <form action='/am_entries/<%=@am_entry.id%>' method="POST">
 	<input type="hidden" name="_method" value="PATCH">
-	<h4>Three things I would like to accomplish today are:
-  	<h4>1. <input type="text" name="goals1" value="<%=@am_entry.goals1%>"style="width: 600px;"</h4><br>
-	<h4>2. <input type="text" name="goals2" value="<%=@am_entry.goals2%>" style="width: 600px;"</h4><br>
-	<h4>3. <input type="text" name="goals3" value="<%=@am_entry.goals3%>" style="width: 600px;"</h4><br>
-	<h4>I think my day would be awesome if...</h4>
-	<h4><textarea name="awesome" cols="40" rows="5"> <%=@am_entry.awesome%></textarea></h4>
-	<h4>Affirmation/Thought of the Day/Words of Encouragement:</h4>
-	<h4><input type="text" name="affirmation" value="<%=@am_entry.affirmation%>" style="width: 600px;"</h4><br>
-	<h4>Five things I am grateful for right now are:</h4>
-	<h4>1. <input type="text" name="gratitude1" value="<%=@am_entry.gratitude1%>" style="width: 600px;"</h4><br>
-	<h4>2. <input type="text" name="gratitude2" value="<%=@am_entry.gratitude2%>" style="width: 600px;"</h4><br>
-	<h4>3. <input type="text" name="gratitude3" value="<%=@am_entry.gratitude3%>" style="width: 600px;"</h4><br>
-	<h4>4. <input type="text" name="gratitude4" value="<%=@am_entry.gratitude4%>" style="width: 600px;"</h4><br>
-	<h4>5. <input type="text" name="gratitude5" value="<%=@am_entry.gratitude5%>" style="width: 600px;"</h4><br>
-	<h4>Additional thoughts/words:</h4>
-	<h4><textarea name="words" cols="40" rows="5"> <%=@am_entry.words%> </textarea></h4>
-	<input type="submit" value="Save Changes">
+	<div class="am_pm_form">
+		<h4>
+			Three things I would like to accomplish today are:
+	  		1. <input type="text" name="goals1" value="<%=@am_entry.goals1%>"<br>
+			2. <input type="text" name="goals2" value="<%=@am_entry.goals2%>" <br>
+			3. <input type="text" name="goals3" value="<%=@am_entry.goals3%>" <br>
+			I think my day would be awesome if...
+			<textarea name="awesome" cols="40" rows="5"> <%=@am_entry.awesome%></textarea>
+			Affirmation/Thought of the Day/Words of Encouragement:
+			<input type="text" name="affirmation" value="<%=@am_entry.affirmation%>"<br>
+			Five things I am grateful for right now are:
+			1. <input type="text" name="gratitude1" value="<%=@am_entry.gratitude1%>" <br>
+			2. <input type="text" name="gratitude2" value="<%=@am_entry.gratitude2%>"<br>
+			3. <input type="text" name="gratitude3" value="<%=@am_entry.gratitude3%>"<br>
+			4. <input type="text" name="gratitude4" value="<%=@am_entry.gratitude4%>"<br>
+			5. <input type="text" name="gratitude5" value="<%=@am_entry.gratitude5%>"<br>
+			Additional thoughts/words:
+			<textarea name="words" cols="40" rows="5"> <%=@am_entry.words%> </textarea>
+			<input type="submit" value="Save Changes">
+		</h4>
+	</div>
 </form>
 <form action="/index">
 	<input type="submit"class="button" value="Return to Index">
