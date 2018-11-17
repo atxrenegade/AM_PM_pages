@@ -141,6 +141,9 @@ body {
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: white;
   text-align: center }
+  div.am_pm_form input {
+  	width: 600px;
+  }
 
 
 /* Typography
@@ -295,7 +298,7 @@ label,
 legend {
   display: block;
   margin-bottom: .5rem;
-  font-weight: 600; }
+  font-weight: 400; }
 fieldset {
   padding: 0;
   border-width: 0; }
@@ -307,9 +310,7 @@ label > .label-body {
   margin-left: .5rem;
   font-weight: normal; }
 
-div.am_pm_form input {
-	width: 600px;
-}
+
 
 /* Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
