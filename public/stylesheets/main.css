@@ -307,7 +307,7 @@ label > .label-body {
   margin-left: .5rem;
   font-weight: normal; }
 
-.am_pm_form input {
+div.am_pm_form input {
 	width: 600px;
 }
 
