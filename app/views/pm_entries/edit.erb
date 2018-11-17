@@ -1,6 +1,6 @@
 <h1> Evening Pages </h1>
 <h3><%= @entry_date %></h3>
-<h4><br>	
+<h4><br>
 	<form action='/pm_entries/<%=@pm_entry.id%>' method="POST">
 		<input type="hidden" name="_method" value="PATCH">
 		<br><br><br><label>Two things today that went really well or exceeded my expectations were: </label><br><br>
@@ -9,7 +9,7 @@
 		<br><br><br><label>Three lessons learned today, or ways I could have made the day better:</label><br><br>
 		1. <input type="text" name="lessons1" value="<%=@pm_entry.lessons1%>"><br><br><br>
 		2. <input type="text" name="lessons2" value="<%=@pm_entry.lessons2%>"><br><br><br>
-		3. <input type="text" name="lessons3" value="<%=@pm_entry.lessonsp%>"><br><br><br>
+		3. <input type="text" name="lessons3" value="<%=@pm_entry.lessons3%>"><br><br><br>
 		<br><br><br><label>Two things I like about myself, or that I did today and am proud of:</label><br><br>
 		1. <input type="text" name="proud1" value="<%=@pm_entry.proud1%>"><br><br><br>
 		2. <input type="text" name="proud2" value="<%=@pm_entry.proud2%>"><br><br><br>
