@@ -275,7 +275,7 @@ textarea {
           appearance: none; }
 textarea {
 	opacity: 0.5;
-	margin: 0;
+	margin-left: 3px;
   	min-height: 65px;
   	padding-top: 6px;
   	padding-bottom: 6px;
