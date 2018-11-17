@@ -1,27 +1,31 @@
 <h1> Evening Pages </h1>
-<form action='/pm_entries/<%=@pm_entry.id%>' method="POST">
-	<input type="hidden" name="_method" value="PATCH">
-	<h4>Two things today that went really well or exceeded my expectations were:
-  	<h4>1. <input type="text" name="excellent1" value="<%=@pm_entry.excellent1%>" style="width: 600px;" </h4><br>
-	<h4>2. <input type="text" name="excellent2" value="<%=@pm_entry.excellent2%>" style="width: 600px;" </h4><br>
-	<h4>Three things I learned today, or ways I could have acted differently or made the day better:</h4>
-	<h4>1. <input type="text" name="lessons1" value="<%=@pm_entry.lessons1%>" style="width: 600px;" </h4><br>
-	<h4>2. <input type="text" name="lessons2" value="<%=@pm_entry.lessons2%>" style="width: 600px;" </h4><br>
-	<h4>3. <input type="text" name="lessons3" value="<%=@pm_entry.lessons3%>" style="width: 600px;" </h4><br>
-	<h4>Five things I am grateful for right now are:</h4>
-	<h4>1. <input type="text" name="gratitude1" value="<%=@pm_entry.gratitude1%>" style="width: 600px;"</h4><br>
-	<h4>2. <input type="text" name="gratitude2" value="<%=@pm_entry.gratitude2%>" style="width: 600px;"</h4><br>
-	<h4>3. <input type="text" name="gratitude3" value="<%=@pm_entry.gratitude3%>" style="width: 600px;"</h4><br>
-	<h4>4. <input type="text" name="gratitude4" value="<%=@pm_entry.gratitude4%>" style="width: 600px;"</h4><br>
-	<h4>5. <input type="text" name="gratitude5" value="<%=@pm_entry.gratitude5%>" style="width: 600px;"</h4><br>
-	<h4>Additional thoughts/words:</h4>
-	<h4><textarea name="thoughts" cols="40" rows="5"><%=@pm_entry.thoughts%> </textarea></h4>
-	<input type="submit" value="Save Changes">
-</form>
-<form action="/index">
-	<input type="submit"class="button" value="Return to Index">
-</form>
-<form action="/main_menu">
-	<input type="submit"class="button" value="Back to Main Menu">
-</form>
-<br><br>
+<h4>
+	<form action='/pm_entries/<%=@pm_entry.id%>' method="POST">
+		<input type="hidden" name="_method" value="PATCH">
+		<br><br><br><label>Two things today that went really well or exceeded my expectations were: </label><br><br>
+		1. <input type="text" name="excellent1" value="<%=@pm_entry.excellent1%>"><br><br><br>
+		2. <input type="text" name="excellent2" value="<%=@pm_entry.excellent2%>"><br><br><br>
+		<br><br><br><label>Three things I learned today, or ways I could have acted differently or made the day better:</label><br><br>
+		1.<input type="text" name="lessons1" value="<%=@pm_entry.lessons1%>"><br><br><br>
+		2.<input type="text" name="lessons2" value="<%=@pm_entry.lessons2%>"><br><br><br>
+		3.<input type="text" name="lessons3" value="<%=@pm_entry.lessonsp%>"><br><br><br>
+		<br><br><br><label>Two things I like about myself, or that I did today and am proud of:</label><br><br>
+		1. <input type="text" name="proud1" value="<%=@pm_entry.proud1%>"><br><br><br>
+		2. <input type="text" name="proud2" value="<%=@pm_entry.proud2%>"><br><br><br>
+		<br><br><br><label>Five things I am grateful for right now are:</label><br><br>
+		1. <input type="text" name="gratitude1" value="<%=@pm_entry.gratitude1%>"><br><br><br>
+		2. <input type="text" name="gratitude2" value="<%=@pm_entry.gratitude2%>"><br><br><br>
+		3. <input type="text" name="gratitude3" value="<%=@pm_entry.gratitude3%>"><br><br><br>
+		4. <input type="text" name="gratitude4" value="<%=@pm_entry.gratitude4%>"><br><br><br>
+		5. <input type="text" name="gratitude5" value="<%=@pm_entry.gratitude5%>"><br><br><br>
+		<br><br><br><label>Additional thoughts/words:</label><br><br>
+		<textarea name="thoughts"><%=@pm_entry.thoughts%></textarea><br><br><br>
+		<input type="submit" value="Save Changes">
+	</form>
+	<form action="/index">
+		<input type="submit"class="button" value="Return to Index">
+	</form>
+	<form action="/main_menu">
+		<input type="submit"class="button" value="Back to Main Menu">
+	</form>
+</h4>
