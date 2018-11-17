@@ -56,6 +56,7 @@ class AMEntriesController < ApplicationController
 		if logged_in?
 			@am_entry = AMEntry.find_by_id(params[:id])
 			if @am_entry && @am_entry.user_id == current_user.id
+				@entry_date = @am_entry.convert_time
 				erb :'/am_entries/edit'
 			else
 				redirect '/main_menu'
