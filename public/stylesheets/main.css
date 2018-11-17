@@ -68,11 +68,11 @@ border-radius: 4px; }
     margin-left: 0; }
 
   .one.column,
-  .one.columns                    {
-	  								width: 100%;
+  .one.columns  				{
+									width: 100%;
 									position: absolute;
 									align-self: center;
-								}
+														   }
   .two.columns                    { width: 13.3333333333%; }
   .three.columns                  { width: 22%;            }
   .four.columns                   { width: 30.6666666667%; }
@@ -167,9 +167,6 @@ h6 { font-size: 1.5rem; line-height: 1;  letter-spacing: 0; color: #F3E5AB; }
   h6 { font-size: 1.5rem; }
 }
 
-
-
-
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
@@ -259,10 +256,6 @@ select {
   height: 38px;
   width: 600px;
   }
-  textarea {
-	  height: 120px;
-	  width: 600px;
-  }
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: #fff;
   opacity: 0.6;
@@ -285,9 +278,11 @@ textarea {
 textarea {
 	opacity: 0.5;
 	margin: 0;
-  min-height: 65px;
-  padding-top: 6px;
-  padding-bottom: 6px; }
+  	min-height: 65px;
+  	padding-top: 6px;
+  	padding-bottom: 6px;
+	height: 120px;
+    width: 600px; }
 input[type="email"]:focus,
 input[type="number"]:focus,
 input[type="search"]:focus,
@@ -303,7 +298,7 @@ label,
 legend {
   display: block;
   margin-bottom: 0px;
- font-weight: 400px;
+  font-weight: 400px;
    }
 fieldset {
   padding: 0;
