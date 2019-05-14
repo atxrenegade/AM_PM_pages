@@ -8,16 +8,19 @@
 		<%= @am_entry.goals2 %><br>
 		<%= @am_entry.goals3 %><br>
 	</h6>
+	<br><br>
 <%end%>
 
 <%if !@am_entry.awesome.empty? %>
 	<h4>I think today would be awesome if...</h4>
 	<h6><%= @am_entry.awesome %><br></h6>
+	<br><br>
 <%end%>
 
 <%if !@am_entry.affirmation.empty? %>
 	<h4>Affirmation/Thought of the Day/Words of Encouragement:</h4>
 	<h6><%= @am_entry.affirmation %><br></h6>
+	<br><br>
 <%end%>
 
 <%if !@am_entry.gratitude1.empty? %>
@@ -29,13 +32,14 @@
 		<%= @am_entry.gratitude4 %><br>
 		<%= @am_entry.gratitude5 %><br>
 	</h6>
+	<br>
 <%end%>
 
 <%if !@am_entry.words.empty?  %>
 	<h4>Additional thoughts/words:</h4>
 	<h6><%= @am_entry.words %><br></h6>
 <%end%>
-<br><br><br>
+<br>
 <form action="/am_entries/<%=@am_entry.id%>/edit" method="GET">
 	<input id="hidden" type="hidden" name="_method" value="edit">
 	<input type="submit" name="edit" class="button" value="Edit Entry">
