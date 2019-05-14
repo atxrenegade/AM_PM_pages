@@ -1,23 +1,23 @@
 <h1> Morning Pages </h1>
 <h3><%= @entry_date %></h3>
-<h4><br>
+<h4>
 	<form action='/am_entries/<%=@am_entry.id%>' method="POST">
 		<input type="hidden" name="_method" value="PATCH">
-		<br><br><br><label>Three things I would like to accomplish today are: </label><br><br>
-  	1. <input type="text" name="goals1" value="<%=@am_entry.goals1%>"><br><br><br>
-		2. <input type="text" name="goals2" value="<%=@am_entry.goals2%>"><br><br><br>
-		3. <input type="text" name="goals3" value="<%=@am_entry.goals3%>"><br><br>
-		<br><br><br><label>I think my day would be awesome if...</label><br><br>
+		<br><label>Three things I would like to accomplish today are: </label>
+  	1. <input type="text" name="goals1" value="<%=@am_entry.goals1%>"><br>
+		2. <input type="text" name="goals2" value="<%=@am_entry.goals2%>"><br>
+		3. <input type="text" name="goals3" value="<%=@am_entry.goals3%>"><br>
+		<br><br><label>I think my day would be awesome if...</label><br><br>
 		<textarea name="awesome"><%=@am_entry.awesome%></textarea><br>
-		<br><br><br><label>Affirmation/Thought of the Day/Words of Encouragement:</label><br><br>
-		<input type="text" name="affirmation" value="<%=@am_entry.affirmation%>" style="margin-left: 20px;"><br><br>
-		<br><br><br><label>Five things I am grateful for right now are:</label><br><br>
-		1. <input type="text" name="gratitude1" value="<%=@am_entry.gratitude1%>"><br><br><br>
-		2. <input type="text" name="gratitude2" value="<%=@am_entry.gratitude2%>"><br><br><br>
-		3. <input type="text" name="gratitude3" value="<%=@am_entry.gratitude3%>"><br><br><br>
-		4. <input type="text" name="gratitude4" value="<%=@am_entry.gratitude4%>"><br><br><br>
-		5. <input type="text" name="gratitude5" value="<%=@am_entry.gratitude5%>"><br><br><br>
-		<br><br><br><label>Additional thoughts/words:</label><br><br>
+		<br><br><label>Affirmation/Thought of the Day/Words of Encouragement:</label>
+		<input type="text" name="affirmation" value="<%=@am_entry.affirmation%>" style="margin-left: 20px;"><br>
+		<br><br><label>Five things I am grateful for right now are:</label><br><br>
+		1. <input type="text" name="gratitude1" value="<%=@am_entry.gratitude1%>"><br>
+		2. <input type="text" name="gratitude2" value="<%=@am_entry.gratitude2%>"><br>
+		3. <input type="text" name="gratitude3" value="<%=@am_entry.gratitude3%>"><br>
+		4. <input type="text" name="gratitude4" value="<%=@am_entry.gratitude4%>"><br>
+		5. <input type="text" name="gratitude5" value="<%=@am_entry.gratitude5%>"><br>
+		<br><br><label>Additional thoughts/words:</label><br><br>
 		<textarea name="words"><%=@am_entry.words%></textarea><br><br><br>
 		<input type="submit" class="button" value="Save Changes">
 	</form>
