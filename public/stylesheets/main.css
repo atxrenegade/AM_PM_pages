@@ -48,18 +48,18 @@
   .container {
     width: 85%;
     padding: 0;
-border: 3px;
-border-color: white;
-border-radius: 4px; }
+		border: 3px;
+		border-color: white;
+		border-radius: 4px; }
 }
 
 /* For devices larger than 550px */
 @media (min-width: 550px) {
   .container {
     width: 80%;
-	border: 3px;
-	border-color: white;
-	border-radius: 4px;}
+		border: 3px;
+		border-color: white;
+		border-radius: 4px;}
   .column,
   .columns {
      }
@@ -149,12 +149,12 @@ body {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   font-weight: 300; }
 h1 { font-size: 5.0rem; line-height: 1.2;  letter-spacing: .2rem; font-family: 'Dancing Script', cursive; font-color: white; opacity: 0.8;}
 h2 { font-size: 2.0rem; line-height: 2.4rem;  letter-spacing: 0; color: white; font-family: Arial, Helvetica, sans-serif; }
 h3 { font-size: 2.0rem; line-height: 2.4rem;  letter-spacing: 0.3; color: #BFEFFF; font-family: Arial, Helvetica, sans-serif; }
-h4 { font-size: 1.5rem; line-height: .5; letter-spacing: 0; font-family: Raleway;}
+h4 { font-size: 1.5rem; line-height: 1.0; letter-spacing: 0; font-family: Raleway;}
 h5 { font-size: 1.2rem; line-height: .7;  letter-spacing: 0; color: #800000; }
 h6 { font-size: 1.5rem; line-height: 1;  letter-spacing: 0; color: #F3E5AB; }
 
@@ -188,7 +188,6 @@ input[type="button"] {
   display: inline-block;
   height: 38px;
   padding: 0 70px;
-  margin: 0px;
   color: white;
   font-weight: bold;
   text-align: center;
@@ -242,6 +241,7 @@ input[type="button"].button-primary:focus {
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+input[type="text"],
 input[type="email"],
 input[type="number"],
 input[type="search"],
@@ -251,11 +251,11 @@ input[type="url"],
 input[type="password"],
 textarea,
 select {
+	display: inline-block;
   font-size: 1.4rem;
   opacity: .5;
   height: 38px;
-  width: 600px;
-  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  width: 90%;
   background-color: #fff;
   opacity: 0.6;
   border: 3px solid white;
@@ -276,12 +276,11 @@ textarea {
           appearance: none; }
 textarea {
 	opacity: 0.5;
-	margin-left: 20px;
   	min-height: 65px;
   	padding-top: 6px;
   	padding-bottom: 6px;
-	height: 120px;
-    width: 600px; }
+		height: 120px;
+    width: 90%; }
 input[type="email"]:focus,
 input[type="number"]:focus,
 input[type="search"]:focus,
@@ -292,7 +291,8 @@ input[type="password"]:focus,
 textarea:focus,
 select:focus {
   border: 1px solid #33C3F0;
-  outline: 0; }
+  outline: 0;
+}
 label,
 legend {
   display: block;
@@ -307,7 +307,6 @@ input[type="radio"] {
   display: inline; }
 label > .label-body {
   display: inline-block;
-  margin-left: .5rem;
   font-weight: normal; }
 
 
@@ -350,12 +349,16 @@ pre > code {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 button,
 .button {
-  margin-bottom: .3rem; }
+  margin: 5px;
+	padding: 0px;
+ }
 input,
 textarea,
 select,
 fieldset {
-  margin-bottom: .5rem; }
+  margin: 30px 5px 30px 5px;
+	padding: 20px 10px;
+}
 pre,
 blockquote,
 dl,
@@ -365,7 +368,7 @@ p,
 ul,
 ol,
 form {
-  margin-bottom: .5rem; }
+  margin-bottom: 0px; }
 
 
 /* Utilities
@@ -411,7 +414,6 @@ near the relevant code. For example, if you wanted to change the styles for butt
 on small devices, paste the mobile query code up in the buttons section and style it
 there.
 */
-
 
 /* Larger than mobile */
 @media (min-width: 400px) {}
