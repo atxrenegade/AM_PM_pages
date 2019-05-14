@@ -1,7 +1,7 @@
 
 <h1><%=@user%>'s Morning and Evening Pages</h1>
 <%@entries.each do |entry| %>
-
+	<br>
 	<%if entry.is_a?(AMEntry)%>
 		<%date = entry.convert_time%>
 	<a href='am_entries/show/<%=entry.id%>'><%= date %><a><br>
