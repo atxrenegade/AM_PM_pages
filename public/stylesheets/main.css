@@ -47,7 +47,7 @@ div.container#heading {
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
-    width: 85%;
+    width: 90%;
     padding: 0;
 		border: 3px;
 		border-color: white;
@@ -57,10 +57,11 @@ div.container#heading {
 /* For devices larger than 550px */
 @media (min-width: 550px) {
   .container {
-    width: 80%;
+		padding: 2%;
 		border: 3px;
 		border-color: white;
-		border-radius: 4px;}
+		border-radius: 4px;
+		align-self: center;}
   .column,
   .columns {
      }
@@ -69,11 +70,11 @@ div.container#heading {
     margin-left: 0; }
 
   .one.column,
-  .one.columns  				{
-									width: 100%;
-									position: absolute;
-									align-self: center;
-														   }
+	.one.columns  									{
+																		width: 90%;
+																		position: absolute;
+																		align-self: center;
+																												   }
   .two.columns                    { width: 13.3333333333%; }
   .three.columns                  { width: 22%;            }
   .four.columns                   { width: 30.6666666667%; }
@@ -152,12 +153,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
   font-weight: 300; }
-h1 { font-size: 5.0rem; line-height: 1.2;  letter-spacing: .2rem; font-family: 'Dancing Script', cursive; font-color: white; opacity: 0.8;}
-h2 { font-size: 2.0rem; line-height: 2.4rem;  letter-spacing: 0; color: white; font-family: Arial, Helvetica, sans-serif; }
-h3 { font-size: 2.0rem; line-height: 2.4rem;  letter-spacing: 0.3; color: #BFEFFF; font-family: Arial, Helvetica, sans-serif; }
-h4 { font-size: 1.5rem; line-height: 1.0; letter-spacing: 0; font-family: Raleway;}
+h1 { font-size: 3.0rem; line-height: 1.2;  letter-spacing: .2rem; font-family: 'Dancing Script', cursive; font-color: white; opacity: 0.8;}
+h2 { font-size: 1.75.0rem; line-height: 2.4rem;  letter-spacing: 0; color: white; font-family: Arial, Helvetica, sans-serif; }
+h3 { font-size: 1.75rem; line-height: 2.4rem;  letter-spacing: 0.3; color: #BFEFFF; font-family: Arial, Helvetica, sans-serif; }
+h4 { font-size: 1.25rem; line-height: 1.0; letter-spacing: 0; font-family: Raleway;}
 h5 { font-size: 1.2rem; line-height: .7;  letter-spacing: 0; color: #800000; }
-h6 { font-size: 1.5rem; line-height: 1;  letter-spacing: 0; color: #F3E5AB; }
+h6 { font-size: 1.2rem; line-height: 1;  letter-spacing: 0; color: #F3E5AB; }
 
 /* Larger than phablet */
 @media (min-width: 550px) {
@@ -185,15 +186,15 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-	margin: 5px;
+	margin: 3px;
   opacity: 0.7;
   display: inline-block;
   height: 38px;
-  padding: 0 70px;
+  padding: 0 7%;
   color: white;
   font-weight: bold;
   text-align: center;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 0px;
   letter-spacing: .1rem;
@@ -358,7 +359,7 @@ input,
 textarea,
 select,
 fieldset {
-  margin: 30px 5px 5px 5px;
+  margin: 2% 5px 5px 5px;
 	padding: 20px 10px;
 }
 pre,
