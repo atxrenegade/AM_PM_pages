@@ -4,7 +4,7 @@
 	<form action='/am_entries/<%=@am_entry.id%>' method="POST">
 		<input type="hidden" name="_method" value="PATCH">
 		<br><br><br><label>Three things I would like to accomplish today are: </label><br><br>
-  		1. <input type="text" name="goals1" value="<%=@am_entry.goals1%>"><br><br><br>
+  	1. <input type="text" name="goals1" value="<%=@am_entry.goals1%>"><br><br><br>
 		2. <input type="text" name="goals2" value="<%=@am_entry.goals2%>"><br><br><br>
 		3. <input type="text" name="goals3" value="<%=@am_entry.goals3%>"><br><br>
 		<br><br><br><label>I think my day would be awesome if...</label><br><br>
@@ -19,13 +19,13 @@
 		5. <input type="text" name="gratitude5" value="<%=@am_entry.gratitude5%>"><br><br><br>
 		<br><br><br><label>Additional thoughts/words:</label><br><br>
 		<textarea name="words"><%=@am_entry.words%></textarea><br><br><br>
-		<input type="submit" value="Save Changes">
+		<input type="submit" class="button" value="Save Changes">
 	</form>
 	<form action="/index">
-		<input type="submit"class="button" value="Return to Index">
+		<input type="submit" class="button" value="Return to Index">
 	</form>
 	<form action="/main_menu">
-		<input type="submit"class="button" value="Back to Main Menu">
+		<input type="submit" class="button" value="Back to Main Menu">
 	</form>
 </h4>
 <br><br>
