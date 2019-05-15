@@ -151,11 +151,11 @@ body {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
   font-weight: 300; }
 h1 { font-size: 3.0rem; line-height: 1.2;  letter-spacing: .2rem; font-family: 'Dancing Script', cursive; font-color: white; opacity: 0.8;}
 h2 { font-size: 1.75.0rem; line-height: 2.4rem;  letter-spacing: 0; color: white; font-family: Arial, Helvetica, sans-serif; }
-h3 { font-size: 1.75rem; line-height: 2.4rem;  letter-spacing: 0.3; color: #BFEFFF; font-family: Arial, Helvetica, sans-serif; }
+h3 { font-size: 1.75rem; line-height: 2.4rem;  letter-spacing: 0.3; color: #BFEFFF; font-family: Arial, Helvetica, sans-serif;}
 h4 { font-size: 1.25rem; line-height: 1.0; letter-spacing: 0; font-family: Raleway;}
 h5 { font-size: 1.2rem; line-height: .7;  letter-spacing: 0; color: #800000; }
 h6 { font-size: 1.2rem; line-height: 1;  letter-spacing: 0; color: #F3E5AB; }
