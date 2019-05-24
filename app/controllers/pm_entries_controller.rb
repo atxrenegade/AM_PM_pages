@@ -23,7 +23,7 @@ class PMEntriesController < ApplicationController
 		@pm_entry = PMEntry.find_by_id(params[:id])
 		if @pm_entry && @pm_entry.user_id == current_user.id
 			@entry_date = @pm_entry.convert_time
-			erb :'/pm_entries/:id'
+			erb :'/pm_entries/show'
 		else
 			redirect '/main_menu'
 		end
@@ -34,7 +34,7 @@ class PMEntriesController < ApplicationController
 		@pm_entry = PMEntry.find_by_id(params[:id])
 		if @pm_entry && @pm_entry.user_id == current_user.id
 			@entry_date = @pm_entry.convert_time
-			erb :'/pm_entries/:id/edit'
+			erb :'/pm_entries/edit'
 		else
 			redirect '/main_menu'
 		end

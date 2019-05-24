@@ -3,10 +3,10 @@
 <%@entries.each do |entry| %>
 	<%if entry.is_a?(AMEntry)%>
 		<%date = entry.convert_time%>
-	<a href='am_entries/show/<%=entry.id%>'><%= date %><a><br>
+	<a href='am_entries/<%=entry.id%>'><%= date %><a><br>
 	<%else%>
 		<%date = entry.convert_time%>
-		<a href='pm_entries/show/<%=entry.id%>'><%= date %><a><br>
+		<a href='pm_entries/<%=entry.id%>'><%= date %><a><br>
 	<%end%>
 <%end%>
 <br>
