@@ -63,6 +63,7 @@ class UsersController < ApplicationController
 	end
 
 	get '/main_menu' do
+		redirect_if_not_logged_in
 		if logged_in?
 			erb :main_menu
 		else
