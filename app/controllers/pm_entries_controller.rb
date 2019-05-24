@@ -8,7 +8,7 @@ class PMEntriesController < ApplicationController
 		end
 	end
 
-	post '/pm_entries/new' do
+	post '/pm_entries' do
 		if logged_in?
 			@pm_entry = PMEntry.new(excellent1: params["excellent1"], excellent2: params["excellent2"], lessons1: params["lessons1"], lessons2: params["lessons2"], gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"], gratitude4: params["gratitude4"], gratitude5: params["gratitude5"], proud1: params["proud1"], proud2: params["proud2"])
 			@pm_entry.thoughts = params["thoughts"].strip
