@@ -54,20 +54,13 @@ class UsersController < ApplicationController
 	end
 
 	get '/logout' do
-		if logged_in?
-			session.clear
-			redirect '/'
-		else
-			redirect '/login'
-		end
+		redirect_if_not_logged_in
+		session.clear
+		redirect '/'
 	end
 
 	get '/main_menu' do
 		redirect_if_not_logged_in
-		if logged_in?
-			erb :main_menu
-		else
-			redirect '/login'
-		end
+		erb :main_menu
 	end
 end
