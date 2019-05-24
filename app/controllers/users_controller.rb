@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 			else
 				@user = User.find_by(username: params["username"])
 				if @user
+						flash[:message] = "This username is already taken. Please select a different username."
 						redirect '/sign_up'
 				else
 					@user = User.new(username: params["username"].strip, email: params["email"].strip, password: params["password"].strip)
