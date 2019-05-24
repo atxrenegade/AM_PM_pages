@@ -3,10 +3,12 @@ require_relative 'application_controller.rb' #must stay because of alphabetical 
 class AMEntriesController < ApplicationController
 	get '/index' do
 		if logged_in?
-			am_entries = AMEntry.where(user_id: session[:id])
-			pm_entries = PMEntry.where(user_id: session[:id])
+			am_entries = current_user.am_entries
+			pm_entries = current_user.pm_entries
+			#am_entries = AMEntry.where(user_id: session[:id])
+			#pm_entries = PMEntry.where(user_id: session[:id])
 			@entries = (am_entries + pm_entries).sort_by(&:created_at)
-			@user = User.find(session[:id]).username.strip
+			@username = current_user.username.strip
 			erb :'/index'
 		else
 			redirect '/login'
@@ -14,27 +16,21 @@ class AMEntriesController < ApplicationController
 	end
 
 	get '/am_entries/new' do
-		if logged_in?
-			erb :'am_entries/new'
-		else
-			redirect '/login'
-		end
+		redirect_if_not_logged_in
+		erb :'am_entries/new'
 	end
 
 	post '/am_entries' do
-		if logged_in?
-			@am_entry = AMEntry.new(goals1: params["goals1"], goals2: params["goals2"], goals3: params["goals3"], affirmation: params["affirmation"], gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"], gratitude4: params["gratitude4"], gratitude5: params["gratitude5"])
-			@am_entry.awesome = params["awesome"].strip
-			@am_entry.words = params["words"].strip
-			@am_entry.user_id = session[:id]
-			if @am_entry && @am_entry.user_id == current_user.id
-				@am_entry.save
-				redirect "/am_entries/show/#{@am_entry.id}"
-			else
-				redirect '/main_menu'
-			end
+		redirect_if_not_logged_in
+		@am_entry = AMEntry.new(goals1: params["goals1"], goals2: params["goals2"], goals3: params["goals3"], affirmation: params["affirmation"], gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"], gratitude4: params["gratitude4"], gratitude5: params["gratitude5"])
+		@am_entry.awesome = params["awesome"].strip
+		@am_entry.words = params["words"].strip
+		@am_entry.user_id = session[:id]
+		if @am_entry && @am_entry.user_id == current_user.id
+			@am_entry.save
+			redirect "/am_entries/show/#{@am_entry.id}"
 		else
-			redirect '/login'
+			redirect '/main_menu'
 		end
 	end
 

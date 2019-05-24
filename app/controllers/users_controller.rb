@@ -13,12 +13,17 @@ class UsersController < ApplicationController
 		if !logged_in?
 			if params[:username].empty? || params[:email].empty? || params[:password].empty?
 				flash[:message] = "Sign up error. Please complete all the fields below."
-				redirect '/sign_up'
+				erb :'/users/sign_up'
 			else
-				@user = User.new(username: params["username"].strip, email: params["email"].strip, password: params["password"].strip)
-				@user.save
-				session[:id] = @user.id
-				erb :'/main_menu'
+				@user = User.find_by(username: params["username"])
+				if @user
+						redirect '/sign_up'
+				else
+					@user = User.new(username: params["username"].strip, email: params["email"].strip, password: params["password"].strip)
+					@user.save
+					session[:id] = @user.id
+					redirect '/main_menu'
+				end
 			end
 		else
 			redirect '/main_menu'
@@ -38,7 +43,7 @@ class UsersController < ApplicationController
 			user = User.find_by(username: params["username"])
 			if user && user.authenticate(params["password"])
 				session[:id] = user[:id]
-				erb :'/main_menu'
+				redirect '/main_menu'
 			else
 				flash[:message] = "Login Error. Please input a valid username and password."
 				redirect '/login'
