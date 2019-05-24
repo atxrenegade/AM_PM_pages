@@ -312,6 +312,10 @@ label > .label-body {
   display: inline-block;
   font-weight: normal; }
 
+input#login, input#signup {
+	margin: 5px 0px;
+	width: 240px;
+}
 
 
 /* Lists
