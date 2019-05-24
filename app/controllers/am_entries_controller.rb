@@ -2,17 +2,12 @@ require_relative 'application_controller.rb' #must stay because of alphabetical 
 
 class AMEntriesController < ApplicationController
 	get '/index' do
-		if logged_in?
-			am_entries = current_user.am_entries
-			pm_entries = current_user.pm_entries
-			#am_entries = AMEntry.where(user_id: session[:id])
-			#pm_entries = PMEntry.where(user_id: session[:id])
-			@entries = (am_entries + pm_entries).sort_by(&:created_at)
-			@username = current_user.username.strip
-			erb :'/index'
-		else
-			redirect '/login'
-		end
+		redirect_if_not_logged_in
+		am_entries = current_user.am_entries
+		pm_entries = current_user.pm_entries
+		@entries = (am_entries + pm_entries).sort_by(&:created_at)
+		@username = current_user.username.strip
+		erb :'/index'
 	end
 
 	get '/am_entries/new' do
@@ -35,59 +30,47 @@ class AMEntriesController < ApplicationController
 	end
 
 	get '/am_entries/show/:id' do
-		if logged_in?
-			@am_entry = AMEntry.find_by_id(params[:id])
-			if @am_entry && @am_entry.user_id == current_user.id
-				@entry_date = @am_entry.convert_time
-				erb :'/am_entries/show'
-			else
-				redirect '/index'
-			end
+		redirect_if_not_logged_in
+		@am_entry = AMEntry.find_by_id(params[:id])
+		if @am_entry && @am_entry.user_id == current_user.id
+			@entry_date = @am_entry.convert_time
+			erb :'/am_entries/show'
 		else
-			redirect '/login'
+			redirect '/index'
 		end
 	end
 
 	get '/am_entries/:id/edit' do
-		if logged_in?
-			@am_entry = AMEntry.find_by_id(params[:id])
-			if @am_entry && @am_entry.user_id == current_user.id
-				@entry_date = @am_entry.convert_time
-				erb :'/am_entries/edit'
-			else
-				redirect '/main_menu'
-			end
+		redirect_if_not_logged_in
+		@am_entry = AMEntry.find_by_id(params[:id])
+		if @am_entry && @am_entry.user_id == current_user.id
+			@entry_date = @am_entry.convert_time
+			erb :'/am_entries/edit'
 		else
-			redirect '/login'
+			redirect '/main_menu'
 		end
 	end
 
 	patch '/am_entries/:id' do
-		if logged_in?
-			@am_entry = AMEntry.find_by_id(params[:id])
-			if @am_entry && @am_entry.user_id == current_user.id
-				@am_entry.update(goals1: params["goals1"], goals2: params["goals2"], goals3: params["goals3"], awesome: params["awesome"].strip, affirmation: params["affirmation"],
-			 	words: params["words"].strip, gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"],  gratitude4: params["gratitude4"], gratitude5: params["gratitude5"], user_id: current_user.id)
-				redirect "/am_entries/show/#{@am_entry.id}"
-			else
-				redirect '/main_menu'
-			end
+		redirect_if_not_logged_in
+		@am_entry = AMEntry.find_by_id(params[:id])
+		if @am_entry && @am_entry.user_id == current_user.id
+			@am_entry.update(goals1: params["goals1"], goals2: params["goals2"], goals3: params["goals3"], awesome: params["awesome"].strip, affirmation: params["affirmation"],
+		 	words: params["words"].strip, gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"],  gratitude4: params["gratitude4"], gratitude5: params["gratitude5"], user_id: current_user.id)
+			redirect "/am_entries/show/#{@am_entry.id}"
 		else
-			redirect '/login'
+			redirect '/main_menu'
 		end
 	end
 
 	delete '/am_entries/:id/delete' do
-		if logged_in?
-			@am_entry = AMEntry.find_by_id(params[:id])
-			if @am_entry && @am_entry.user_id == current_user.id
-				@am_entry.destroy
-				redirect '/index'
-			else
-				redirect '/main_menu'
-			end
+		redirect_if_not_logged_in
+		@am_entry = AMEntry.find_by_id(params[:id])
+		if @am_entry && @am_entry.user_id == current_user.id
+			@am_entry.destroy
+			redirect '/index'
 		else
-			redirect '/login'
-		end
+			redirect '/main_menu'
+		end	
 	end
 end
