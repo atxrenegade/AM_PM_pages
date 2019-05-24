@@ -10,7 +10,7 @@ gem 'bcrypt'
 gem 'pg'
 gem 'rack-flash3', '~> 1.0', '>= 1.0.5'
 gem 'rspec'
-gem 'rack-test'
+gem "rack-test", "1.1.0"
 
 group :development do
   gem 'sqlite3'

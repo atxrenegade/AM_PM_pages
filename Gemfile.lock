@@ -93,7 +93,7 @@ DEPENDENCIES
   pg
   pry
   rack-flash3 (~> 1.0, >= 1.0.5)
-  rack-test
+  rack-test (= 1.1.0)
   rake
   require_all
   rspec
