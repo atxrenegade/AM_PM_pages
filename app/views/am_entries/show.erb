@@ -3,6 +3,12 @@
 	<h3><%= @entry_date %></h3>
 </div>
 <br>
+<%if !@am_entry.intention.empty? %>
+	<h4>My intention for today is:</h4>
+	<h6><%= @am_entry.intention %><br></h6>
+	<br><br>
+<%end%>
+<br>
 <%if !@am_entry.goals1.empty? %>
 	<h4>Three things I would like to accomplish today are: </h4>
 	<h6>
