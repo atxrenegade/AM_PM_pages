@@ -44,7 +44,6 @@ class PMEntriesController < ApplicationController
 		redirect_if_not_logged_in
 		@pm_entry = PMEntry.find_by_id(params[:id])
 		if @pm_entry && @pm_entry.user_id == current_user.id
-			binding.pry
 			@pm_entry.update(intention_pm: params["intention_pm"], thoughts: params["thoughts"].strip, excellent1: params["excellent1"], excellent2: params["excellent2"], lessons1: params["lessons1"], lessons2: params["lessons2"], lessons3: params["lessons3"], gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"], gratitude4: params["gratitude4"], gratitude5: params["gratitude5"], proud1: params["proud1"], proud2: params["proud2"], user_id: current_user.id)
 			redirect "/pm_entries/#{@pm_entry.id}"
 		else
