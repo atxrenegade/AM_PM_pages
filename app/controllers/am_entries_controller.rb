@@ -17,7 +17,7 @@ class AMEntriesController < ApplicationController
 
 	post '/am_entries' do
 		redirect_if_not_logged_in
-		@am_entry = AMEntry.new(goals1: params["goals1"], goals2: params["goals2"], goals3: params["goals3"], affirmation: params["affirmation"], gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"], gratitude4: params["gratitude4"], gratitude5: params["gratitude5"])
+		@am_entry = AMEntry.new(intention: params["intention"], goals1: params["goals1"], goals2: params["goals2"], goals3: params["goals3"], affirmation: params["affirmation"], gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"], gratitude4: params["gratitude4"], gratitude5: params["gratitude5"])
 		@am_entry.awesome = params["awesome"].strip
 		@am_entry.words = params["words"].strip
 		@am_entry.user_id = session[:id]
@@ -55,7 +55,7 @@ class AMEntriesController < ApplicationController
 		redirect_if_not_logged_in
 		@am_entry = AMEntry.find_by_id(params[:id])
 		if @am_entry && @am_entry.user_id == current_user.id
-			@am_entry.update(goals1: params["goals1"], goals2: params["goals2"], goals3: params["goals3"], awesome: params["awesome"].strip, affirmation: params["affirmation"],
+			@am_entry.update(intention: params["intention"], goals1: params["goals1"], goals2: params["goals2"], goals3: params["goals3"], awesome: params["awesome"].strip, affirmation: params["affirmation"],
 		 	words: params["words"].strip, gratitude1: params["gratitude1"], gratitude2: params["gratitude2"], gratitude3: params["gratitude3"],  gratitude4: params["gratitude4"], gratitude5: params["gratitude5"], user_id: current_user.id)
 			redirect "/am_entries/#{@am_entry.id}"
 		else
