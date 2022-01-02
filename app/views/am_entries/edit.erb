@@ -4,7 +4,7 @@
 	<form action='/am_entries/<%=@am_entry.id%>' method="POST">
 		<input type="hidden" name="_method" value="PATCH">
 		<br><label>My intention for today is:</label>
-		<input type="text" name="intention" style="margin-left: 20px;"><br>
+		<input type="text" name="intention" value="<%=@am_entry.intention%>"><br>
 		<br><label>Three things I would like to accomplish today are: </label>
   	1. <input type="text" name="goals1" value="<%=@am_entry.goals1%>"><br>
 		2. <input type="text" name="goals2" value="<%=@am_entry.goals2%>"><br>
